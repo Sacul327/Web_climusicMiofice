@@ -3,54 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-<link href="css/pantalladVentas.css" rel="stylesheet">
 <title>Ventas</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-	integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-	crossorigin="anonymous">
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-	integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-	crossorigin="anonymous"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style>
-/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-.row.content {
-	height: 1500px
-}
+	href="css/bootstrap.min.css">
 
-/* Set gray background color and 100% height */
-.sidenav {
-	background-color: #f1f1f1;
-	height: auto;
-}
-
-/* Set black background color, white text and some padding */
-footer {
-	background-color: #555;
-	color: white;
-	padding: 15px;
-}
-
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
-	.sidenav {
-		height: auto;
-		padding: 15px;
-	}
-	.row.content {
-		height: auto;
-	}
-}
-</style>
+<script
+	src="js/bootstrap.min.js"
+	></script>
+<script
+	src="js/jquery.min.js"></script>
+<script
+	src="js/bootstrap.min.js"></script>
+<link href="css/pantalladVentas.css" rel="stylesheet">
 </head>
 <body>
 	<form action="Carrito" method="post">
@@ -60,7 +26,7 @@ footer {
 				<h1>Climusic</h1>
 				<!-- DropDown -->
 				<div class="dropdown">
-					<a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+					<a id="dpinstrumentos" class="btn btn-secondary dropdown-toggle" href="#" role="button"
 						id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false"> Instrumentos </a>
 
@@ -87,24 +53,35 @@ footer {
 			</div>
 			<!--Vert Layout derecha -->
 			<div class="col-sm-5">
-					<table border="1">
-						<tr>
-							<th>Submission ID</th>
-							<th>Form ID</th>
-							<th>IP</th>
-							<th>Name</th>
-							<th>E-mail</th>
-							<th>Message</th>
-						</tr>
-						<tr>
-							<td>123456789</td>
-							<td>12345</td>
-							<td>123.555.789</td>
-							<td>John Johnny</td>
-							<td>johnny@example.com</td>
-							<td>This is the message John sent you</td>
-						</tr>
-					</table>
+					
+					<div class="list-group">
+						<button type="button"
+							class="list-group-item list-group-item-action">
+							Cras justo odio</button>
+						<button type="button"
+							class="list-group-item list-group-item-action">Dapibus
+							ac facilisis in</button>
+						<button type="button"
+							class="list-group-item list-group-item-action">Morbi leo
+							risus</button>
+						<button type="button"
+							class="list-group-item list-group-item-action">Porta ac
+							consectetur ac</button>
+						<button type="button"
+							class="list-group-item list-group-item-action">Vestibulum
+							at eros</button>
+					</div>
+					<button id="btnm" type="button" class="btn btn-primary">agregar compra</button>
+					<div class="card" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+							<p class="card-text">Some quick example text to build on the
+								card title and make up the bulk of the card's content.</p>
+							<a href="#" class="card-link">Card link</a> <a href="#"
+								class="card-link">Another link</a>
+						</div>
+					</div>
 					<!-- <div class="input-group">
         <input type="text" class="form-control" placeholder="Search Blog..">
         <span class="input-group-btn">

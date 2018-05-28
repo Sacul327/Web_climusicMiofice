@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.BasicConfigurator;
+
 import Main.Objetos;
 
 /**
@@ -16,6 +19,8 @@ import Main.Objetos;
  */
 @WebServlet("/servlet")
 public class Servlet extends HttpServlet {
+	static Logger log = Logger.getLogger(Objetos.class);
+	
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -30,12 +35,19 @@ public class Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		BasicConfigurator.configure();
 		PrintWriter out = response.getWriter();
 		String email= request.getParameter("email");
 		String password= request.getParameter("password");
 		Objetos obj = new Objetos();
-		obj.checkUser(email, password);
-		
+		if(obj.checkUser(email, password)) {
+			log.info("Bienvenido "+email);
+		}else {
+			log.warn("Usuario o contraseña incorrecta");
+		}
+		System.out.println(obj.comprueboAdmin(email));
+		//request.getRequestDispatcher("index.jsp");
+	    //dispatcher.forward( request, response ); 
 		
 
 	}
