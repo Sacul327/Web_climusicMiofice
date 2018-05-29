@@ -3,6 +3,7 @@ package com.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -46,10 +47,7 @@ public class Servlet extends HttpServlet {
 			log.warn("Usuario o contraseña incorrecta");
 		}
 		System.out.println(obj.comprueboAdmin(email));
-		//request.getRequestDispatcher("index.jsp");
-	    //dispatcher.forward( request, response ); 
-		
-
+		request.getRequestDispatcher("Probando.jsp").forward(request, response);
 	}
 
 	/**
