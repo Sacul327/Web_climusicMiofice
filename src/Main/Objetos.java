@@ -40,7 +40,7 @@ public class Objetos implements DetalleMetodos {
 
 	}
 
-	public boolean listaUsuarios(String usuario,String contraseña) {
+	public boolean listaUsuarios(String usuario,String pass) {
 		boolean existe=false;
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -49,7 +49,7 @@ public class Objetos implements DetalleMetodos {
 
 			Statement estado= con.createStatement();
 			ResultSet resultado= estado.executeQuery("SELECT doc_usser, pass_user FROM sys_account Where doc_usser = '"+
-			usuario+"' AND pass_user = '"+ contraseña+"' ;");
+			usuario+"' AND pass_user = '"+ pass+"' ;");
 			while(resultado.next()) {
 				//idUs.add(resultado.getString("doc_usser"));
 				//System.out.println(resultado.getString("doc_usser"));

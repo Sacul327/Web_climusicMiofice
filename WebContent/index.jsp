@@ -16,7 +16,7 @@
   </head>
 
   <body class="text-center">
-    <form class="form-signin" action="servlet" method="post">
+    <form class="form-signin" action="ServletMain" method="post">
       <a href="https://imgur.com/uZVUAkz"><img src="https://i.imgur.com/uZVUAkz.jpg" title="source: imgur.com" /></a>
       <h3 class="h6 mb-3 font-weight-normal">Please sign in</h3>
       <label for="inputEmail" class="sr-only">Email address</label>

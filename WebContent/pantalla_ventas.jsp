@@ -47,13 +47,28 @@
 					</div>
 					<h4>Usa tarjeta</h4>
 				</div>
+			<!-- Lista Carrito -->
+				<div id="cart" class="list-group">
+ 					 <button type="button" class="list-group-item list-group-item-action active">Compras listas para facturar</button>
+					 <button type="button" class="list-group-item list-group-item-action" disabled>fender</button>
+					 <button type="button" class="list-group-item list-group-item-action" disabled>base guitarra</button>
+					 <button type="button" class="list-group-item list-group-item-action" disabled>correa</button>
+					 <button type="button" class="list-group-item list-group-item-action" disabled>puas</button>
+				</div>
+			<!-- Drop from cart -->
+				<div id="addcart" class="input-group mb-3">
+  						<div class="input-group-prepend">
+    					<button class="btn btn-outline-secondary" type="button">drop from cart</button>
+  						</div>
+  						<input type="text" class="form-control" aria-label="" aria-describedby="basic-addon1" placeholder="N° de producto">
+				</div>
 				
 
 
 			</div>
 			<!--Vert Layout derecha -->
 			<div class="col-sm-5">
-					
+					<!-- Lista de productos Stock -->
 					<div id="listproducto" class="list-group">
 						<button  type="button"
 							class="list-group-item list-group-item-action">
@@ -67,47 +82,19 @@
 						<button type="button"
 							class="list-group-item list-group-item-action">Porta ac
 							consectetur ac</button>
-						<button type="button"
-							class="list-group-item list-group-item-action">Vestibulum
-							at eros</button><button type="button"
-							class="list-group-item list-group-item-action">Dapibus
-							ac facilisis in</button>
-						<button type="button"
-							class="list-group-item list-group-item-action">Morbi leo
-							risus</button>
-						<button type="button"
-							class="list-group-item list-group-item-action">Porta ac
-							consectetur ac</button>
-						<button type="button"
-							class="list-group-item list-group-item-action">Vestibulum
-							at eros</button><button type="button"
-							class="list-group-item list-group-item-action">Dapibus
-							ac facilisis in</button>
-						<button type="button"
-							class="list-group-item list-group-item-action">Morbi leo
-							risus</button>
-						<button type="button"
-							class="list-group-item list-group-item-action">Porta ac
-							consectetur ac</button>
-						<button type="button"
-							class="list-group-item list-group-item-action">Vestibulum
-							at eros</button><button type="button"
-							class="list-group-item list-group-item-action">Dapibus
-							ac facilisis in</button>
-						<button type="button"
-							class="list-group-item list-group-item-action">Morbi leo
-							risus</button>
-						<button type="button"
-							class="list-group-item list-group-item-action">Porta ac
-							consectetur ac</button>
-						<button type="button"
-							class="list-group-item list-group-item-action">Vestibulum
-							at eros</button>
+						
 					</div>
-					<button id="btnm" type="button" class="btn btn-primary">agregar compra</button>
+					<!-- Agregar al carro codigo -->
+					<div id="addcart" class="input-group mb-3">
+  						<div class="input-group-prepend">
+    					<button class="btn btn-outline-secondary" type="button">Add to cart</button>
+  							</div>
+  							<input type="text" class="form-control" placeholder="N° de producto" aria-label="" aria-describedby="basic-addon1">
+					</div>
+					<!-- Descripcion de los productos -->
 					<div class="card" style="width: 18rem;">
 						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
+							<h5 class="card-title">Descripcion del producto :</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
 							<p class="card-text">Some quick example text to build on the
 								card title and make up the bulk of the card's content.</p>
