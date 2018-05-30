@@ -68,7 +68,8 @@
 			</div>
 			<!--Vert Layout derecha -->
 			<div class="col-sm-5">
-					<!-- Lista de productos Stock -->
+			<!-- navegador para la lista -->
+					<!-- Lista de productos Stockdentro del nav -->
 					<div id="listproducto" class="list-group">
 						<button  type="button"
 							class="list-group-item list-group-item-action">
