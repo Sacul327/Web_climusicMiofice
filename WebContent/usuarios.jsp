@@ -22,6 +22,9 @@
       background-color: #f2f2f2;
       padding: 25px;
     }
+    #addcart{
+    	display: inline;
+    }
     
   </style>
 </head>
@@ -45,8 +48,27 @@
 
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>My Portfolio</h1>      
-    <p>Some text that represents "Me"...</p>
+    <div id="listproducto" class="list-group">
+						<button  type="button"
+							class="list-group-item list-group-item-action">
+							Cras justo odio</button>
+						<button type="button"
+							class="list-group-item list-group-item-action">Dapibus
+							ac facilisis in</button>
+						<button type="button"
+							class="list-group-item list-group-item-action">Morbi leo
+							risus</button>
+						<button type="button"
+							class="list-group-item list-group-item-action">Porta ac
+							consectetur ac</button>
+						
+					</div>
+					<div id="addcart" class="input-group mb-3">
+  						<div class="input-group-prepend">
+    					<button class="btn btn-outline-secondary" type="button">Add to cart</button>
+  							</div>
+  							<input type="text" class="form-control" placeholder="N° de producto" aria-label="" aria-describedby="basic-addon1">
+					</div>
   </div>
 </div>
   
