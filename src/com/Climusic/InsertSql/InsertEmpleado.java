@@ -1,7 +1,5 @@
 package com.Climusic.InsertSql;
 
-import java.sql.Date;
-import java.sql.Timestamp;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

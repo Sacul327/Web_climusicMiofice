@@ -2,7 +2,7 @@ package com.Climusic.Daos;
 
 import java.util.List;
 
-import com.Climusic.Modelos.Empleado;;
+import com.Climusic.Modelos.Empleado;
 
 public interface EmpleadoDao {
 

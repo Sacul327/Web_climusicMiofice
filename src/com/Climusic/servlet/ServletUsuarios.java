@@ -2,6 +2,7 @@ package com.Climusic.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,8 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.CannotGetJdbcConnectionException;
+
+import com.Climusic.Daos.EmpleadoDao;
 import com.Climusic.Daos.EmpleadoDaoImpl;
 import com.Climusic.InsertSql.InsertEmpleado;
+import com.Climusic.Modelos.Empleado;
 
 /**
  * Servlet implementation class ServletUsuarios
@@ -53,7 +61,25 @@ public class ServletUsuarios extends HttpServlet {
 		InsertEmpleado emp= new InsertEmpleado();
 		emp.InsertEmpleado(nombre, apellido, documento, contrasena, email, privilegioInt);
 		
+		ApplicationContext application= new ClassPathXmlApplicationContext("Spring.xml");
+		EmpleadoDao empleadodao = (EmpleadoDao) application.getBean("EmpleadoDao");
 		
+		try {
+			List<Empleado> listEmp = empleadodao.buscarTodos();
+			for (Empleado listEmp2 : listEmp) {
+				System.out.println(listEmp2);
+				out.print(listEmp2);
+			}
+		
+		
+	} catch (CannotGetJdbcConnectionException ex) {
+		ex.printStackTrace();
+	} catch (DataAccessException e) {
+		e.printStackTrace();
 	}
+		
+	((ClassPathXmlApplicationContext)application).close();
+	
 
+	}
 }

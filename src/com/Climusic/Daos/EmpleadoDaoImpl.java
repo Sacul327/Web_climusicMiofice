@@ -43,7 +43,7 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 
 	@Override
 	public List<Empleado> buscarTodos() {
-		return jdbcTemplate.query("Select * from Admin", new RowMapper<Empleado>() {
+		return jdbcTemplate.query("Select * from empleado", new RowMapper<Empleado>() {
 
 			public Empleado mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Empleado emp = new Empleado();

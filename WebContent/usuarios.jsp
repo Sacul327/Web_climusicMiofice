@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    
+    %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,31 +16,32 @@
 </head>
 <body>
 <div class="container-fluid bg-3"> 
-<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse">
  
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" disabled>Lista Usuarios</a>
+   	 <div class="navbar-header">
+     	 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      	  <span class="icon-bar"></span>
+      	  <span class="icon-bar"></span>
+       	 <span class="icon-bar"></span>                        
+     	 </button>
+      	<a class="navbar-brand" disabled>Lista Usuarios</a>
 
-    </div>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item"><a class="nav-link" href="pantalla_ventas_admin.jsp" >ventas</a></li>
-			<li class="nav-item disabled"><a class="nav-link" href="usuarios.jsp" >Administrar Usuarios</a></li>
-		</ul>
-	</div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </div>
+   	 </div>
+    	<div class="collapse navbar-collapse" id="navbarColor01">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="pantalla_ventas_admin.jsp" >ventas</a></li>
+				<li class="nav-item disabled"><a class="nav-link" href="usuarios.jsp" >Administrar Usuarios</a></li>
+			</ul>
+		</div>
+  	  <div class="collapse navbar-collapse" id="myNavbar">
+  	    <span class="navbar-toggler-icon"></span>
+  	  </div>
   
-</nav>
+	</nav>
 
 <div class="jumbotron">
   <div class="container text-center">
+  
     <div id="listproducto" class="list-group">
 						<button  type="button"
 							class="list-group-item list-group-item-action">
