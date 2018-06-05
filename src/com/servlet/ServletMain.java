@@ -51,10 +51,11 @@ public class ServletMain extends HttpServlet {
 		if(obj.checkUser(email, password)) {
 			log.info("Bienvenido "+email);
 		}else {
-			log.warn("Usuario o contraseña incorrecta");
+			log.warn("Usuario o contraseÃ±a incorrecta");
 		}
 		if(obj.comprueboAdmin(email)==true) {
-		request.getRequestDispatcher("AdminFView.jsp").forward(request, response);
+			System.out.println("llegue a compruebo y es TRUE");
+		request.getRequestDispatcher("pantalla_ventas_admin.jsp").forward(request, response);
 		}else {
 			request.getRequestDispatcher("pantalla_ventas.jsp").forward(request, response);
 		}

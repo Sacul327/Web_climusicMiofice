@@ -13,7 +13,7 @@
 
 </head>
 <body>
-<div class="container-fluid bg-3 text-center"> 
+<div class="container-fluid bg-3"> 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -24,6 +24,12 @@
       </button>
       <a class="navbar-brand" disabled>Lista Usuarios</a>
     </div>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="pantalla_ventas_admin.jsp" href="" >ventas</a></li>
+			<li class="nav-item disabled"><a class="nav-link" href="usuarios.jsp" >Administrar Usuarios</a></li>
+		</ul>
+	</div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <span class="navbar-toggler-icon"></span>
     </div>
@@ -47,23 +53,52 @@
 							consectetur ac</button>
 						
 					</div>
-					<div id="addcart" class="input-group mb-3">
+					<Form class="form-horizontal">
   							
   							<input type="text" class="form-control" placeholder="N° de producto" aria-label="" aria-describedby="basic-addon1">
   							<div class="input-group-prepend">
-    					<button id="botonquitar" class="btn btn-dark btn-block" type="button">Add to cart</button>
+    					<button id="botonquitar" class="btn btn-primary btn-block" type="button">Quitar usuario</button>
   							</div>
-					</div>
+					</form>
   </div>
 </div>
-  
-<div class="container-fluid bg-3 text-center">    
-  <h3>Some of my Work</h3><br>
-  
-</div><br>
+ <h3>Agregar usuario</h3>
+<div class="container-fluid bg-3">
+			<form class="form-horizontal">
+				
+					<div class="form-row col-md-6">
+						<label for="inputNombre">Nombre:</label> <input type="text"
+							class="form-control" id="inputNombre" placeholder="nombre...">
+					</div>
+					<div class="form-row col-md-6">
+						<label for="inputApellido">Apellido :</label> <input
+							type="text" class="form-control" id="inputApellido"
+							placeholder="Apellido...">
+					</div>
+				<div class="form-row col-md-6">
+					<label for="inputDocumento">Documento :</label> <input type="text"
+						class="form-control" id="inputDocumento" placeholder="N° Documento...">
+				</div>
+				<div class="form-row col-md-6">
+					<label for="inputEmail">Email :</label> <input type="email"
+						class="form-control" id="inputEmail"
+						placeholder="Email...">
+				</div>
+				<div class="form-row col-md-6">
+					<label for="inputContrasenia">Contraseña :</label> <input type="password"
+						class="form-control" id="inputContrasenia" placeholder="Contraseña...">
+				</div>
+				<div class="form-row col-md-6">
+					<label for="inputPrivilegio">Privilegio :</label> <input type="text"
+						class="form-control" id="inputPrivilegio"
+						placeholder="Ingrese: admin O vendedor">
+				</div>
+			</form>
+
+		</div>
 </div>
 <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+  <button type="submit" class="btn btn-primary">Agregar usuario</button>
 </footer>
 
 </body>
