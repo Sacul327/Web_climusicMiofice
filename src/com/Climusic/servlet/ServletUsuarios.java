@@ -41,6 +41,8 @@ public class ServletUsuarios extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		
 	}
 
 	/**
@@ -55,21 +57,22 @@ public class ServletUsuarios extends HttpServlet {
 		String documento= request.getParameter("documento");
 		String email = request.getParameter("email");
 		String contrasena = request.getParameter("contrasena");
-		System.out.println(contrasena);
 		String privilegio = request.getParameter("privilegio");
 		int privilegioInt = Integer.parseInt(privilegio);
 		InsertEmpleado emp= new InsertEmpleado();
 		emp.InsertEmpleado(nombre, apellido, documento, contrasena, email, privilegioInt);
 		
-		ApplicationContext application= new ClassPathXmlApplicationContext("Spring.xml");
-		EmpleadoDao empleadodao = (EmpleadoDao) application.getBean("EmpleadoDao");
+		/*ApplicationContext application= new ClassPathXmlApplicationContext("Spring.xml");
+		EmpleadoDao empleadodao = (EmpleadoDao) application.getBean("EmpleadoDao");*/
 		
 		try {
-			List<Empleado> listEmp = empleadodao.buscarTodos();
-			for (Empleado listEmp2 : listEmp) {
-				System.out.println(listEmp2);
-				out.print(listEmp2);
-			}
+			/*List<Empleado> listEmp = *///empleadodao.buscarTodos();
+		/*	for (Empleado listEmp2 : listEmp) {*/
+				//request.getRequestDispatcher("index.jsp").forward(request, response);
+			String redirect = response.encodeRedirectURL(request.getContextPath() + "/usuarios.jsp");
+				response.sendRedirect(redirect);
+
+			//}
 		
 		
 	} catch (CannotGetJdbcConnectionException ex) {
@@ -78,7 +81,7 @@ public class ServletUsuarios extends HttpServlet {
 		e.printStackTrace();
 	}
 		
-	((ClassPathXmlApplicationContext)application).close();
+	//((ClassPathXmlApplicationContext)application).close();
 	
 
 	}

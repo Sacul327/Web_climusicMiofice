@@ -1,7 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"
+    pageEncoding="UTF-8"%>
     
-    %>
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
+<%@ page import="com.Climusic.Daos.EmpleadoDao"%>
+<%@ page import="com.Climusic.Modelos.Empleado" %>
+<%@ page import="java.util.List"%>
+<%@ page import="org.springframework.jdbc.CannotGetJdbcConnectionException" %>
+<%@ page import="org.springframework.dao.DataAccessException" %>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,12 +35,14 @@
       	<a class="navbar-brand" disabled>Lista Usuarios</a>
 
    	 </div>
-    	<div class="collapse navbar-collapse" id="navbarColor01">
+		<div class="collapse navbar-collapse" id="navbarColor01">
 			<ul class="navbar-nav mr-auto">
+			
 				<li class="nav-item"><a class="nav-link" href="pantalla_ventas_admin.jsp" >ventas</a></li>
 				<li class="nav-item disabled"><a class="nav-link" href="usuarios.jsp" >Administrar Usuarios</a></li>
 			</ul>
 		</div>
+		
   	  <div class="collapse navbar-collapse" id="myNavbar">
   	    <span class="navbar-toggler-icon"></span>
   	  </div>
@@ -42,23 +52,84 @@
 <div class="jumbotron">
   <div class="container text-center">
   
-    <div id="listproducto" class="list-group">
-						<button  type="button"
-							class="list-group-item list-group-item-action">
-							Cras justo odio</button>
-						<button type="button"
-							class="list-group-item list-group-item-action">Dapibus
-							ac facilisis in</button>
-						<button type="button"
-							class="list-group-item list-group-item-action">Morbi leo
-							risus</button>
-						<button type="button"
-							class="list-group-item list-group-item-action">Porta ac
-							consectetur ac</button>
-						
-					</div>
 					<Form class="form-horizontal">
-  							
+  							<table class="table table-striped " id="tabla">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Documento</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
+					String nombre = request.getParameter("nombre");
+					String id = request.getParameter("id");
+
+					ApplicationContext app = new ClassPathXmlApplicationContext("Spring.xml");
+					EmpleadoDao empleadodao = (EmpleadoDao) app.getBean("EmpleadoDao");
+					if ((nombre != null) || (id != null)) {
+						if (nombre != null) {
+							try {
+								List<Empleado> emp = empleadodao.buscarXNombre(nombre);
+								for (Empleado emp2 : emp) {
+				%>
+				<tr>
+					<td><%=emp2.getNombre()%></td>
+					<td><%=emp2.getApellido()%></td>
+					<td><%=emp2.getDocumento()%></td>
+				</tr>
+				<%
+					}
+							} catch (CannotGetJdbcConnectionException ex) {
+								ex.printStackTrace();
+							} catch (DataAccessException e) {
+								e.printStackTrace();
+							}
+						
+						} else {
+							if (id != null) {
+								System.out.println(id);
+								try {
+
+									Empleado emp = empleadodao.buscarXId(Integer.parseInt(id));
+				%>
+				<tr>
+					<td><%=emp.getNombre()%></td>
+					<td><%=emp.getApellido()%></td>
+					<td><%=emp.getDocumento()%></td>
+				</tr>
+				<%
+					} catch (CannotGetJdbcConnectionException ex) {
+									ex.printStackTrace();
+								} catch (DataAccessException e) {
+									e.printStackTrace();
+								}
+							}
+						}
+					} else {
+						try {
+							List<Empleado> emp = empleadodao.buscarTodos();
+							for (Empleado emp2 : emp) {
+				%>
+				<tr>
+					<td><%=emp2.getNombre()%></td>
+					<td><%=emp2.getApellido()%></td>
+					<td><%=emp2.getDocumento()%></td>
+				</tr>
+				<%
+					}
+						} catch (CannotGetJdbcConnectionException ex) {
+							ex.printStackTrace();
+						} catch (DataAccessException e) {
+							e.printStackTrace();
+						}
+					}
+					((ClassPathXmlApplicationContext) app).close();
+				%>
+
+			</tbody>
+		</table>
   							<input type="text" class="form-control" placeholder="N° de producto" aria-label="" aria-describedby="basic-addon1">
   							<div class="input-group-prepend">
     					<button id="botonquitar" class="btn btn-primary btn-block" type="button">Quitar usuario</button>

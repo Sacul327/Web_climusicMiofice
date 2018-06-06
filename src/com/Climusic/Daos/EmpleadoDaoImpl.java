@@ -30,14 +30,15 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 	
 	@Override
 	public boolean save(Empleado empleado) {
-		MapSqlParameterSource paramMap=new MapSqlParameterSource();
+		/*MapSqlParameterSource paramMap=new MapSqlParameterSource();
 		System.out.println(empleado.toString());
 		paramMap.addValue("nombre", empleado.getNombre());
 		paramMap.addValue("apellido", empleado.getApellido());
 		paramMap.addValue("email", empleado.getEmail());
 		paramMap.addValue("documento", empleado.getDocumento());
 		paramMap.addValue("contraseña", empleado.getContraseña());
-		paramMap.addValue("permiso", empleado.getPermiso());
+		paramMap.addValue("permiso", empleado.getPermiso());*/
+		BeanPropertySqlParameterSource paramMap = new BeanPropertySqlParameterSource(empleado);
 		return jdbcTemplate.update("insert into empleado(nombre,apellido,email,documento,contraseña,permiso) values(:nombre,:apellido,:email,:documento,:contraseña,:permiso)", paramMap) == 1;
 	}
 
@@ -61,31 +62,30 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 
 	@Override
 	public Empleado buscarXId(int id_empleado) {
-		// TODO Auto-generated method stub
-		return null;
+		return jdbcTemplate.queryForObject("Select * from empleado where id_empleado = :id_empleado", new MapSqlParameterSource("id_empleado",id_empleado),new EmpleadoRowMapper());
 	}
 
 	@Override
-	public List<Empleado> buscarXNombreApellido(String nombre, String apellido) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Empleado> buscarXNombre(String nombre/*, String apellido*/) {
+		return jdbcTemplate.query("Select * from empleado where nombre like :nombre",new MapSqlParameterSource("nombre", "%" + nombre + "%"), new EmpleadoRowMapper());
 	}
 
 	@Override
-	public boolean actualizar(Empleado admin) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean actualizar(Empleado empleado) {
+		return jdbcTemplate.update("Update empleado set nombre:nombre, apellido:apellido, email:email, documento:documento, contraseña:contraseña, permiso:permiso where id_empleado=:id_empleado ", 
+				new BeanPropertySqlParameterSource(empleado)) == 1;
 	}
 
 	@Override
 	public boolean borrar(int id_empleado) {
-		// TODO Auto-generated method stub
-		return false;
+		return jdbcTemplate.update("delete from empleado Where id_empleado=id_empleado", new MapSqlParameterSource("id_empleado",id_empleado
+				)) == 1;
 	}
-
+	
 	@Override
-	public void grabarTodos() {
-		// TODO Auto-generated method stub
+	public int[] grabarTodos(List<Empleado> empleado) {
+		SqlParameterSource[] batchArgs = SqlParameterSourceUtils.createBatch(empleado.toArray());
+		return jdbcTemplate.batchUpdate("insert into empleado (nombre,apellido,documento,email,contraseña,privilegio) values (:nombre,:apellido,:documento,:email,:contraseña,:privilegio)", batchArgs);
 		
 	}
 
