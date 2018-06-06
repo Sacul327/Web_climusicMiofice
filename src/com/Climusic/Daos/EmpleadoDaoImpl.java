@@ -78,7 +78,8 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 
 	@Override
 	public boolean borrar(int id_empleado) {
-		return jdbcTemplate.update("delete from empleado Where id_empleado=id_empleado", new MapSqlParameterSource("id_empleado",id_empleado
+		System.out.println(id_empleado);
+		return jdbcTemplate.update("delete from empleado Where id_empleado="+id_empleado, new MapSqlParameterSource("id_empleado",id_empleado
 				)) == 1;
 	}
 	

@@ -62,15 +62,18 @@ public class ServletUsuarios extends HttpServlet {
 		InsertEmpleado emp= new InsertEmpleado();
 		emp.InsertEmpleado(nombre, apellido, documento, contrasena, email, privilegioInt);
 		
+		
+		
+		
 		/*ApplicationContext application= new ClassPathXmlApplicationContext("Spring.xml");
 		EmpleadoDao empleadodao = (EmpleadoDao) application.getBean("EmpleadoDao");*/
 		
 		try {
 			/*List<Empleado> listEmp = *///empleadodao.buscarTodos();
 		/*	for (Empleado listEmp2 : listEmp) {*/
-				//request.getRequestDispatcher("index.jsp").forward(request, response);
+				//request.getRequestDispatcher("usuarios.jsp").forward(request, response);
 			String redirect = response.encodeRedirectURL(request.getContextPath() + "/usuarios.jsp");
-				response.sendRedirect(redirect);
+			response.sendRedirect(redirect);
 
 			//}
 		

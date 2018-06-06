@@ -75,6 +75,7 @@
 								for (Empleado emp2 : emp) {
 				%>
 				<tr>
+					<td><%=emp2.getId_empleado()%></td>
 					<td><%=emp2.getNombre()%></td>
 					<td><%=emp2.getApellido()%></td>
 					<td><%=emp2.getDocumento()%></td>
@@ -95,6 +96,7 @@
 									Empleado emp = empleadodao.buscarXId(Integer.parseInt(id));
 				%>
 				<tr>
+					<td><%=emp.getId_empleado()%></td>
 					<td><%=emp.getNombre()%></td>
 					<td><%=emp.getApellido()%></td>
 					<td><%=emp.getDocumento()%></td>
@@ -113,6 +115,7 @@
 							for (Empleado emp2 : emp) {
 				%>
 				<tr>
+					<td><%=emp2.getId_empleado()%></td>
 					<td><%=emp2.getNombre()%></td>
 					<td><%=emp2.getApellido()%></td>
 					<td><%=emp2.getDocumento()%></td>
@@ -130,11 +133,14 @@
 
 			</tbody>
 		</table>
-  							<input type="text" class="form-control" placeholder="N° de producto" aria-label="" aria-describedby="basic-addon1">
+		</form>			
+						<form class="form-signin" action="ServletUsuariosQuitar" method="post">
+  							<input name="numEmpleado" type="text" class="form-control" placeholder="N° de empleado" aria-label="" aria-describedby="basic-addon1">
   							<div class="input-group-prepend">
-    					<button id="botonquitar" class="btn btn-primary btn-block" type="button">Quitar usuario</button>
+    					<button id="botonquitar" class="btn btn-primary btn-block" type="submit">Quitar usuario</button>
   							</div>
-					</form>
+  						</form>
+					
   </div>
 </div>
  <h3>Agregar usuario</h3>
