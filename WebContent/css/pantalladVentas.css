@@ -51,11 +51,14 @@ margenes{
 }
 #listproducto{
 	margin-top: 30px;
-	
+	overflow: scroll;
 	max-height: 200px;
 }
 #addcart{
 	margin-top: 30px;
+}
+#tablapadre{
+	overflow: scroll;
 }
 Para hacer scrolleable listProductos
 <!--overflow: scroll;-->

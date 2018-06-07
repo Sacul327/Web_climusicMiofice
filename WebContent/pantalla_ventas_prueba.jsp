@@ -4,7 +4,7 @@
 <%@ page import="org.springframework.context.ApplicationContext" %>
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
 <%@ page import="com.Climusic.Daos.ProductoDao"%>
-<%@ page import="com.Climusic.Productos.Productos" %>
+<%@ page import="com.Climusic.Productos.Productos"%>
 <%@ page import="java.util.List"%>
 <%@ page import="org.springframework.jdbc.CannotGetJdbcConnectionException" %>
 <%@ page import="org.springframework.dao.DataAccessException" %>
@@ -95,14 +95,17 @@
 			</div>
 			<!--Vert Layout derecha -->
 			<div class="col-sm-5">
-				<Form class="form-horizontal" id="">
+				<Form class="form-horizontal" id="tablapadre">
 					<table class="table table-striped " id="tabla">
 						<thead>
 							<tr>
-								<th>Id</th>
-								<th>Nombre</th>
-								<th>Apellido</th>
-								<th>Documento</th>
+								<th>Marca</th>
+								<th>Modelo</th>
+								<th>Precio</th>
+								<th>Stock</th>
+								<th>Color</th>
+								<th>Tipo</th>
+								<th>Detalle</th>
 							</tr>
 						</thead>
 						<tbody>
