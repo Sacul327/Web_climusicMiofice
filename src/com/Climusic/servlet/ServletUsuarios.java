@@ -51,7 +51,6 @@ public class ServletUsuarios extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		PrintWriter out = response.getWriter();
 		String nombre= request.getParameter("nombre");
 		String apellido= request.getParameter("apellido");
 		String documento= request.getParameter("documento");

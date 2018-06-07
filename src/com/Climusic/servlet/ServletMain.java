@@ -55,13 +55,16 @@ public class ServletMain extends HttpServlet {
 			log.info("Bienvenido "+email);
 		}else {
 			log.warn("Usuario o contraseña incorrecta");
+			String redirect = response.encodeRedirectURL(request.getContextPath() + "/index.jsp");
+			response.sendRedirect(redirect);
 		}
 		System.out.println(obj.comprueboAdmin(email));
 		if(obj.comprueboAdmin(email)==true) {
-		request.getRequestDispatcher("pantalla_ventas_admin.jsp").forward(request, response);
+			String redirect = response.encodeRedirectURL(request.getContextPath() + "/pantalla_ventas_admin.jsp");
+			response.sendRedirect(redirect);
 		}else {
-			request.getRequestDispatcher("pantalla_ventas.jsp").forward(request, response);
-		}
+			String redirect = response.encodeRedirectURL(request.getContextPath() + "/pantalla_ventas.jsp");
+			response.sendRedirect(redirect);		}
 		
 	}
 

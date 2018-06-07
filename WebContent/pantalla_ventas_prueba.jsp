@@ -3,8 +3,8 @@
     
 <%@ page import="org.springframework.context.ApplicationContext" %>
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
-<%@ page import="com.Climusic.Daos.EmpleadoDao"%>
-<%@ page import="com.Climusic.Modelos.Empleado" %>
+<%@ page import="com.Climusic.Daos.ProductoDao"%>
+<%@ page import="com.Climusic.Productos.Productos" %>
 <%@ page import="java.util.List"%>
 <%@ page import="org.springframework.jdbc.CannotGetJdbcConnectionException" %>
 <%@ page import="org.springframework.dao.DataAccessException" %>
@@ -93,69 +93,35 @@
 
 
 			</div>
-			<table class="table table-striped " id="tabla">
+			<!--Vert Layout derecha -->
+			<div class="col-sm-5">
+				<Form class="form-horizontal" id="">
+					<table class="table table-striped " id="tabla">
 						<thead>
 							<tr>
+								<th>Id</th>
 								<th>Nombre</th>
-								<th>Telefono</th>
-								<th>Deuda</th>
+								<th>Apellido</th>
+								<th>Documento</th>
 							</tr>
 						</thead>
 						<tbody>
 							<%
-								String nombre = request.getParameter("nombre");
-								String id = request.getParameter("id");
-
-								ApplicationContext app = new ClassPathXmlApplicationContext("Spring.xml");
-								EmpleadoDao empleadodao = (EmpleadoDao) app.getBean("EmpleadoDao");
-								if ((nombre != null) || (id != null)) {
-									if (nombre != null) {
-										try {
-											List<Empleado> emp = empleadodao.buscarXNombre(nombre);
-											for (Empleado emp2 : emp) {
-							%>
-							<tr>
-								<td><%=emp2.getNombre()%></td>
-								<td><%=emp2.getApellido()%></td>
-								<td><%=emp2.getDocumento()%></td>
-							</tr>
-							<%
-								}
-										} catch (CannotGetJdbcConnectionException ex) {
-											ex.printStackTrace();
-										} catch (DataAccessException e) {
-											e.printStackTrace();
-										}
-										System.out.println("terminado if");
-									} else {
-										if (id != null) {
-											System.out.println(id);
-											try {
-
-												Empleado emp = empleadodao.buscarXId(Integer.parseInt(id));
-							%>
-							<tr>
-								<td><%=emp.getNombre()%></td>
-								<td><%=emp.getApellido()%></td>
-								<td><%=emp.getDocumento()%></td>
-							</tr>
-							<%
-								} catch (CannotGetJdbcConnectionException ex) {
-												ex.printStackTrace();
-											} catch (DataAccessException e) {
-												e.printStackTrace();
-											}
-										}
-									}
-								} else {
+							  ApplicationContext app = new ClassPathXmlApplicationContext("Spring.xml");
+							  ProductoDao productodao = (ProductoDao) app.getBean("ProductoDao");
+								
 									try {
-										List<Empleado> emp = empleadodao.buscarTodos();
-										for (Empleado emp2 : emp) {
+										List<Productos> pro = productodao.buscarTodos();
+										for (Productos pro2 : pro) {
 							%>
 							<tr>
-								<td><%=emp2.getNombre()%></td>
-								<td><%=emp2.getApellido()%></td>
-								<td><%=emp2.getDocumento()%></td>
+								<td><%=pro2.getMarca()%></td>
+								<td><%=pro2.getModelo()%></td>
+								<td><%=pro2.getPrecio()%></td>
+								<td><%=pro2.getStock()%></td>
+								<td><%=pro2.getColor()%></td>
+								<td><%=pro2.getTipo()%></td>
+								<td><%=pro2.getTipo_detalle()%></td>
 							</tr>
 							<%
 								}
@@ -164,11 +130,13 @@
 									} catch (DataAccessException e) {
 										e.printStackTrace();
 									}
-								}
+								
 								((ClassPathXmlApplicationContext) app).close();
 							%>
-			<!--Vert Layout derecha -->
-			<div class="col-sm-5">
+
+						</tbody>
+					</table>
+				</form>
 			<!-- navegador para la lista -->
 			
 					<!-- Lista de productos Stockdentro del nav -->

@@ -25,3 +25,7 @@ footer {
     	position: relative;
     	top: 15px;
     }
+    
+#tabla{
+	overflow: scroll;
+}
