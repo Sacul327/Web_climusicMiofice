@@ -15,13 +15,35 @@ public class MethodoProbar {
 	
 	
 	List<Productos> listMostrar= new ArrayList();
+	
+	public void espejoDos(List<Productos> x) {
+		
+		listMostrar=x;
+		for(int i = 0;i<listMostrar.size();i++) {
+			System.out.println("Que contiene el carrito de compra :"+listMostrar.get(i));
+	}
+		
+	}
 
+	public void espejoList(/*Productos add,*/List<Productos> x,int c) {
+		//listMostrar=x;
+		Productos add=x.get(c);
+		listMostrar.add(add);
+		for(int i = 0;i<listMostrar.size();i++) {
+			System.out.println("Que contiene el carrito de compra :"+listMostrar.get(i));
+	}
+		
+	}
+	
+	
+	
 	public void AgregarLista(List list,int x) {
 		
-		listMostrar.add((Productos) list.get(x));
-		for(int i = 0;i<listMostrar.size();i++) {
-				System.out.println(listMostrar.get(i));
-		}
+		
+		
+		
+		
+		
 	}
 	
 	public void addTry() {

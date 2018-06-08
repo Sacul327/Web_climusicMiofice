@@ -25,13 +25,13 @@ public class Main {
 			List<Productos> listPro= prod.buscarTodos();
 			
 			for (Productos pro2 : listPro) {
-					pro2.getMarca();
-					pro2.getModelo();
-					pro2.getPrecio();
-					pro2.getStock();
-					pro2.getColor();
-					pro2.getTipo();
-					pro2.getTipo_detalle();
+					System.out.println(pro2.getMarca());
+					System.out.println(pro2.getModelo());
+					System.out.println(pro2.getPrecio());
+					System.out.println(pro2.getStock());
+					System.out.println(pro2.getColor());
+					System.out.println(pro2.getTipo());
+					System.out.println(pro2.getTipo_detalle());
 			}
 		 }catch(CannotGetJdbcConnectionException ex) {
 					ex.printStackTrace();
@@ -39,9 +39,10 @@ public class Main {
 					e.printStackTrace();
 				}
 		List<Productos>listPro = prod.buscarTodos();
-		
-		met.AgregarLista(listPro, 1);
-	
+		System.out.println("************************MI OTRA LISTA****************************");
+
+		met.espejoDos(listPro);
+		//met.espejoList(listPro, 1);
 		
 		((ClassPathXmlApplicationContext) application).close();
 
