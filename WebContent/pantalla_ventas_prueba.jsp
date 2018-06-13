@@ -3,8 +3,8 @@
     
 <%@ page import="org.springframework.context.ApplicationContext" %>
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
-<%@ page import="com.Climusic.Daos.ProductoDao"%>
-<%@ page import="com.Climusic.Productos.Productos"%>
+<%@ page import="com.Climusic.Daos.CarroDao"%>
+<%@ page import="com.Climusic.Modelos.Carro"%>
 <%@ page import="java.util.List"%>
 <%@ page import="org.springframework.jdbc.CannotGetJdbcConnectionException" %>
 <%@ page import="org.springframework.dao.DataAccessException" %>
@@ -75,7 +75,7 @@
 					<h4>Usa tarjeta</h4>
 				</div>
 			<!-- Lista Carrito -->
-				<Form class="form-horizontal" id="tablapadre">
+				<Form class="form-horizontal" id="tablapadre" action="ServletCart" method="post">
 					<table class="table table-striped " id="tabla">
 						<thead>
 							<tr>
@@ -91,20 +91,17 @@
 						<tbody>
 							<%
 							  ApplicationContext app = new ClassPathXmlApplicationContext("Spring.xml");
-							  ProductoDao productodao = (ProductoDao) app.getBean("ProductoDao");
+							  CarroDao carrodao = (CarroDao) app.getBean("CarroDao");
 								
 									try {
-										List<Productos> pro = productodao.buscarTodos();
-										for (Productos pro2 : pro) {
+										List<Carro> cart = carrodao.buscarTodos();
+										for (Carro cart2 : cart) {
 							%>
 							<tr>
-								<td><%=pro2.getMarca()%></td>
-								<td><%=pro2.getModelo()%></td>
-								<td><%=pro2.getPrecio()%></td>
-								<td><%=pro2.getStock()%></td>
-								<td><%=pro2.getColor()%></td>
-								<td><%=pro2.getTipo()%></td>
-								<td><%=pro2.getTipo_detalle()%></td>
+								<td><%=cart2.getId_factura()%></td>
+								<td><%=cart2.getId_instrumento()%></td>
+								<td><%=cart2.getCantidad()%></td>
+								
 							</tr>
 							<%
 								}
@@ -188,8 +185,16 @@
 									<button class="btn btn-outline-secondary" type="button">Add
 										to cart</button>
 								</div>
-								<input type="text" class="form-control"
+								<input name="NroProducto" type="text" class="form-control"
 									placeholder="N° de producto" aria-label=""
+									aria-describedby="basic-addon1">
+							</div>
+							<div id="addcart" class="input-group mb-3">
+								<div class="input-group-prepend">
+									<button class="btn btn-outline-secondary" type="button">Cantidad</button>
+								</div>
+								<input name="cantidad" type="text" class="form-control"
+									placeholder="Cantidad de unidades" aria-label=""
 									aria-describedby="basic-addon1">
 							</div>
 							<!-- Descripcion de los productos -->

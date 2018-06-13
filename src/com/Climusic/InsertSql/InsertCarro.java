@@ -5,23 +5,19 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
 
-import com.Climusic.Daos.EmpleadoDao;
-import com.Climusic.Modelos.Empleado;
+import com.Climusic.Daos.CarroDao;
+import com.Climusic.Modelos.Carro;
 
 public class InsertCarro {
 	
-	public void InsertEmpleado(String nombre,String apellido,String documento,String password, String email,int permiso) {
+	public void InsertCarro(int cantidad,int id_instrumento) {
 		ApplicationContext application= new ClassPathXmlApplicationContext("Spring.xml");
-		EmpleadoDao empleadodao = (EmpleadoDao) application.getBean("EmpleadoDao"); 
-		Empleado empleado = new Empleado();
-		empleado.setNombre(nombre);
-		empleado.setApellido(apellido);
-		empleado.setDocumento(documento);
-		empleado.setPassword(password);
-		empleado.setEmail(email);
-		empleado.setPermiso(permiso);
+		CarroDao cartdao = (CarroDao) application.getBean("CarroDao"); 
+		Carro cart = new Carro();
+		cart.setId_instrumento(id_instrumento);
+		cart.setCantidad(cantidad);
 		try {
-			empleadodao.save(empleado);
+			cartdao.save(cart);
 			System.out.println("Registro salvado exitosamente");
 			
 		}catch(CannotGetJdbcConnectionException ex){
