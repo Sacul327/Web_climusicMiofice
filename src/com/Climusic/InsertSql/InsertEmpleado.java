@@ -12,14 +12,14 @@ import com.Climusic.Modelos.Empleado;
 public class InsertEmpleado {
 
 	
-	public void InsertEmpleado(String nombre,String apellido,String documento,String contraseÃ±a, String email,int permiso) {
+	public void InsertEmpleado(String nombre,String apellido,String documento,String contraseña, String email,int permiso) {
 		ApplicationContext application= new ClassPathXmlApplicationContext("Spring.xml");
 		EmpleadoDao empleadodao = (EmpleadoDao) application.getBean("EmpleadoDao"); 
 		Empleado empleado = new Empleado();
 		empleado.setNombre(nombre);
 		empleado.setApellido(apellido);
 		empleado.setDocumento(documento);
-		empleado.setContraseÃ±a(contraseÃ±a);
+		empleado.setContraseña(contraseña);
 		empleado.setEmail(email);
 		empleado.setPermiso(permiso);
 		try {

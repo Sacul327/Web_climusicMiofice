@@ -40,7 +40,7 @@ public class ProductoDaoImpl implements ProductoDao {
 		paramMap.addValue("contraseña", empleado.getContraseña());
 		paramMap.addValue("permiso", empleado.getPermiso());*/
 		BeanPropertySqlParameterSource paramMap = new BeanPropertySqlParameterSource(producto);
-		return jdbcTemplate.update("insert into empleado(nombre,apellido,email,documento,contraseña,permiso) values(:nombre,:apellido,:email,:documento,:contraseña,:permiso)", paramMap) == 1;
+		return jdbcTemplate.update("insert into empleado(nombre,apellido,email,documento,contrase�a,permiso) values(:nombre,:apellido,:email,:documento,:contrase�a,:permiso)", paramMap) == 1;
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class ProductoDaoImpl implements ProductoDao {
 
 	@Override
 	public boolean actualizar(Productos producto) {
-		return jdbcTemplate.update("Update empleado set nombre:nombre, apellido:apellido, email:email, documento:documento, contraseña:contraseña, permiso:permiso where id_empleado=:id_empleado ", 
+		return jdbcTemplate.update("Update empleado set nombre:nombre, apellido:apellido, email:email, documento:documento, contrase�a:contrase�a, permiso:permiso where id_empleado=:id_empleado ", 
 				new BeanPropertySqlParameterSource(producto)) == 1;
 	}
 
@@ -81,7 +81,7 @@ public class ProductoDaoImpl implements ProductoDao {
 	@Override
 	public int[] grabarTodos(List<Productos> producto) {
 		SqlParameterSource[] batchArgs = SqlParameterSourceUtils.createBatch(producto.toArray());
-		return jdbcTemplate.batchUpdate("insert into productos (nombre,apellido,documento,email,contraseña,privilegio) values (:nombre,:apellido,:documento,:email,:contraseña,:privilegio)", batchArgs);
+		return jdbcTemplate.batchUpdate("insert into productos (nombre,apellido,documento,email,contrase�a,privilegio) values (:nombre,:apellido,:documento,:email,:contrase�a,:privilegio)", batchArgs);
 		
 	}
 

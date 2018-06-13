@@ -48,8 +48,8 @@ public class Objetos implements DetalleMetodos {
 			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=climusic","sa","123456");
 
 			Statement estado= con.createStatement();
-			ResultSet resultado= estado.executeQuery("SELECT email , contraseÃ±a FROM empleado Where email = '"+
-			usuario+"' AND contraseÃ±a = '"+ pass+"' ;");
+			ResultSet resultado= estado.executeQuery("SELECT email , contraseña FROM empleado Where email = '"+
+			usuario+"' AND contraseña = '"+ pass+"' ;");
 			while(resultado.next()) {
 				//idUs.add(resultado.getString("doc_usser"));
 				//System.out.println(resultado.getString("doc_usser"));

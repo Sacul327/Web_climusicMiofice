@@ -58,11 +58,15 @@
 
         <div class="col-lg-3">
 
-          <h1 class="my-4">Shop Name</h1>
+          <h1 class="my-4">Instrumentos</h1>
           <div class="list-group">
-            <a href="#" class="list-group-item">Category 1</a>
-            <a href="#" class="list-group-item">Category 2</a>
-            <a href="#" class="list-group-item">Category 3</a>
+            <a href="#" class="list-group-item">Guitarras</a>
+            <a href="#" class="list-group-item">Bajos</a>
+            <a href="#" class="list-group-item">Baterias</a>
+            <a href="#" class="list-group-item">Teclados</a>
+            <a href="#" class="list-group-item">Microfonos</a>
+            <a href="#" class="list-group-item">Consolas</a>
+            <a href="#" class="list-group-item">Equipos</a>
           </div>
 
         </div>

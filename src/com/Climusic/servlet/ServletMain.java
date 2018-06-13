@@ -54,7 +54,7 @@ public class ServletMain extends HttpServlet {
 		if(obj.checkUser(email, password)) {
 			log.info("Bienvenido "+email);
 		}else {
-			log.warn("Usuario o contraseÃ±a incorrecta");
+			log.warn("Usuario o contraseña incorrecta");
 			String redirect = response.encodeRedirectURL(request.getContextPath() + "/index.jsp");
 			response.sendRedirect(redirect);
 		}
