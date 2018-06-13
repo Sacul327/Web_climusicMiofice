@@ -3,7 +3,7 @@ package com.Climusic.Modelos;
 public class Empleado {
 	
 	private int id_empleado,permiso;
-	private String nombre,apellido,documento,contraseña,email;
+	private String nombre,apellido,documento,password,email;
 	
 	
 	public int getId_empleado() {
@@ -36,11 +36,11 @@ public class Empleado {
 	public void setDocumento(String documento) {
 		this.documento = documento;
 	}
-	public String getContraseña() {
-		return contraseña;
+	public String getPassword() {
+		return password;
 	}
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getEmail() {
 		return email;
@@ -48,14 +48,14 @@ public class Empleado {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Empleado(int id_empleado, int permiso, String nombre, String apellido, String documento, String contraseña,
+	public Empleado(int id_empleado, int permiso, String nombre, String apellido, String documento, String password,
 			String email) {
 		this.id_empleado = id_empleado;
 		this.permiso = permiso;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.documento = documento;
-		this.contraseña = contraseña;
+		this.password = password;
 		this.email = email;
 	}
 	public Empleado() {
@@ -64,7 +64,7 @@ public class Empleado {
 	@Override
 	public String toString() {
 		return "Productos [id_empleado=" + id_empleado + ", permiso=" + permiso + ", nombre=" + nombre + ", apellido="
-				+ apellido + ", documento=" + documento + ", contraseña=" + contraseña + ", email=" + email + "]";
+				+ apellido + ", documento=" + documento + ", password=" + password + ", email=" + email + "]";
 	}
 	
 	

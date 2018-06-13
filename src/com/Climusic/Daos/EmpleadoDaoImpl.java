@@ -39,7 +39,7 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 		paramMap.addValue("contraseÃ±a", empleado.getContraseÃ±a());
 		paramMap.addValue("permiso", empleado.getPermiso());*/
 		BeanPropertySqlParameterSource paramMap = new BeanPropertySqlParameterSource(empleado);
-		return jdbcTemplate.update("insert into empleado(nombre,apellido,email,documento,contraseña,permiso) values(:nombre,:apellido,:email,:documento,:contraseña,:permiso)", paramMap) == 1;
+		return jdbcTemplate.update("insert into empleado(nombre,apellido,email,documento,password,permiso) values(:nombre,:apellido,:email,:documento,:password,:permiso)", paramMap) == 1;
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 				emp.setApellido(rs.getString("apellido"));
 				emp.setDocumento(rs.getString("documento"));
 				emp.setEmail(rs.getString("email"));
-				emp.setContraseña(rs.getString("contraseña"));
+				emp.setPassword(rs.getString("password"));
 				emp.setPermiso(rs.getInt("permiso"));
 				return emp;
 			}
@@ -72,7 +72,7 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 
 	@Override
 	public boolean actualizar(Empleado empleado) {
-		return jdbcTemplate.update("Update empleado set nombre:nombre, apellido:apellido, email:email, documento:documento, contraseña:contraseña, permiso:permiso where id_empleado=:id_empleado ", 
+		return jdbcTemplate.update("Update empleado set nombre:nombre, apellido:apellido, email:email, documento:documento, password:password, permiso:permiso where id_empleado=:id_empleado ", 
 				new BeanPropertySqlParameterSource(empleado)) == 1;
 	}
 
@@ -86,7 +86,7 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 	@Override
 	public int[] grabarTodos(List<Empleado> empleado) {
 		SqlParameterSource[] batchArgs = SqlParameterSourceUtils.createBatch(empleado.toArray());
-		return jdbcTemplate.batchUpdate("insert into empleado (nombre,apellido,documento,email,contraseña,privilegio) values (:nombre,:apellido,:documento,:email,:contraseña,:privilegio)", batchArgs);
+		return jdbcTemplate.batchUpdate("insert into empleado (nombre,apellido,documento,email,password,privilegio) values (:nombre,:apellido,:documento,:email,:password,:privilegio)", batchArgs);
 		
 	}
 

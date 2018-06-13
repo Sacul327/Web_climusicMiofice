@@ -1,6 +1,5 @@
 package com.Climusic.InsertSql;
 
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.DataAccessException;
@@ -9,8 +8,7 @@ import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import com.Climusic.Daos.EmpleadoDao;
 import com.Climusic.Modelos.Empleado;
 
-public class InsertEmpleado {
-
+public class InsertCarro {
 	
 	public void InsertEmpleado(String nombre,String apellido,String documento,String password, String email,int permiso) {
 		ApplicationContext application= new ClassPathXmlApplicationContext("Spring.xml");
@@ -34,6 +32,5 @@ public class InsertEmpleado {
 		((ClassPathXmlApplicationContext)application).close();
 		
 	}
-	}
-	
 
+}

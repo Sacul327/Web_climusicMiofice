@@ -22,7 +22,7 @@ public class Objetos implements DetalleMetodos {
 		try {
 			
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=climusic","sa","123456");
+			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://192.168.44.96:1433;databaseName=climusic","lucas","123456");
 			Statement estado= con.createStatement();
 			ResultSet resultado= estado.executeQuery("SELECT * FROM productos");
 			System.out.println("marca \t modelo \t color");
@@ -45,11 +45,11 @@ public class Objetos implements DetalleMetodos {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
 			
-			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=climusic","sa","123456");
+			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://192.168.44.96:1433;databaseName=climusic","lucas","123456");
 
 			Statement estado= con.createStatement();
-			ResultSet resultado= estado.executeQuery("SELECT email , contraseña FROM empleado Where email = '"+
-			usuario+"' AND contraseña = '"+ pass+"' ;");
+			ResultSet resultado= estado.executeQuery("SELECT email , password FROM empleado Where email = '"+
+			usuario+"' AND password = '"+ pass+"' ;");
 			while(resultado.next()) {
 				//idUs.add(resultado.getString("doc_usser"));
 				//System.out.println(resultado.getString("doc_usser"));
@@ -96,7 +96,7 @@ public class Objetos implements DetalleMetodos {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
 		
-			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=climusic","sa","123456");
+			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://192.168.44.96:1433;databaseName=climusic","lucas","123456");
 			
 			Statement estado= con.createStatement();
 			

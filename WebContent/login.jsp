@@ -12,12 +12,22 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <title>Welcome</title>
-    
+   	<style>
+   	
+   	.pos{
+   		margin-bottom: 30px;
+   		margin-left: 8px;
+   	}
+   	
+   	
+   	</style> 
+   
   </head>
 
   <body class="text-center">
     <form class="form-signin" action="ServletMain" method="post">
-      <a href="https://imgur.com/uZVUAkz"><img src="https://i.imgur.com/uZVUAkz.jpg" title="source: imgur.com" /></a>
+      <!--<a href="https://imgur.com/uZVUAkz"><img src="https://i.imgur.com/uZVUAkz.jpg" title="source: imgur.com" /></a>-->
+      <a class="navbar-brand" href="#"><img src="images/ClimusiclogoCortado.jpg" class="img-responsive pos" style="width: 100%" alt="Image"></a>
       <h3 class="h6 mb-3 font-weight-normal">Please sign in</h3>
       <label for="inputEmail" class="sr-only">Email address</label>
       <input  name="email" type="email" id="inputEmail" class="form-control mb-2" placeholder="Email address" required autofocus>

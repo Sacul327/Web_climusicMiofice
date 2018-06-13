@@ -17,7 +17,7 @@ public class EmpleadoRowMapper implements RowMapper<Empleado> {
 			emp.setApellido(rs.getString("apellido"));
 			emp.setDocumento(rs.getString("documento"));
 			emp.setEmail(rs.getString("email"));
-			emp.setContraseña(rs.getString("contraseña"));
+			emp.setPassword(rs.getString("password"));
 			emp.setPermiso(rs.getInt("permiso"));
 			return emp;
 		}

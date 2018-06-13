@@ -75,13 +75,51 @@
 					<h4>Usa tarjeta</h4>
 				</div>
 			<!-- Lista Carrito -->
-				<div id="cart" class="list-group">
- 					 <button type="button" class="list-group-item list-group-item-action active">Compras listas para facturar</button>
-					 <button type="button" class="list-group-item list-group-item-action" disabled>fender</button>
-					 <button type="button" class="list-group-item list-group-item-action" disabled>base guitarra</button>
-					 <button type="button" class="list-group-item list-group-item-action" disabled>correa</button>
-					 <button type="button" class="list-group-item list-group-item-action" disabled>puas</button>
-				</div>
+				<Form class="form-horizontal" id="tablapadre">
+					<table class="table table-striped " id="tabla">
+						<thead>
+							<tr>
+								<th>Marca</th>
+								<th>Modelo</th>
+								<th>Precio</th>
+								<th>Stock</th>
+								<th>Color</th>
+								<th>Tipo</th>
+								<th>Detalle</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%
+							  ApplicationContext app = new ClassPathXmlApplicationContext("Spring.xml");
+							  ProductoDao productodao = (ProductoDao) app.getBean("ProductoDao");
+								
+									try {
+										List<Productos> pro = productodao.buscarTodos();
+										for (Productos pro2 : pro) {
+							%>
+							<tr>
+								<td><%=pro2.getMarca()%></td>
+								<td><%=pro2.getModelo()%></td>
+								<td><%=pro2.getPrecio()%></td>
+								<td><%=pro2.getStock()%></td>
+								<td><%=pro2.getColor()%></td>
+								<td><%=pro2.getTipo()%></td>
+								<td><%=pro2.getTipo_detalle()%></td>
+							</tr>
+							<%
+								}
+									} catch (CannotGetJdbcConnectionException ex) {
+										ex.printStackTrace();
+									} catch (DataAccessException e) {
+										e.printStackTrace();
+									}
+								
+								((ClassPathXmlApplicationContext) app).close();
+							%>
+
+						</tbody>
+					</table>
+				</form>
 			<!-- Drop from cart -->
 				<div id="addcart" class="input-group mb-3">
   						<div class="input-group-prepend">
