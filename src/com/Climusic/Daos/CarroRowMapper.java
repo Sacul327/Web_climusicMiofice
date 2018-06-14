@@ -15,7 +15,6 @@ public class CarroRowMapper implements RowMapper<Carro> {
 			Carro cart = new Carro();
 			cart.setId_instrumento(rs.getInt("id_instrumento"));
 			cart.setId_factura(rs.getInt("id_factura"));
-			cart.setCantidad(rs.getInt("cantidad"));			
 			return cart;
 		}
 

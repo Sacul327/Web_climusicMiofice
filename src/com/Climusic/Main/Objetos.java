@@ -22,7 +22,8 @@ public class Objetos implements DetalleMetodos {
 		try {
 			
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://192.168.44.96:1433;databaseName=climusic","lucas","123456");
+			//192.168.44.96
+			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=climusic1","sa","123456");
 			Statement estado= con.createStatement();
 			ResultSet resultado= estado.executeQuery("SELECT * FROM productos");
 			System.out.println("marca \t modelo \t color");
@@ -45,7 +46,7 @@ public class Objetos implements DetalleMetodos {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
 			
-			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://192.168.44.96:1433;databaseName=climusic","lucas","123456");
+			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=climusic1","sa","123456");
 
 			Statement estado= con.createStatement();
 			ResultSet resultado= estado.executeQuery("SELECT email , password FROM empleado Where email = '"+
@@ -96,7 +97,7 @@ public class Objetos implements DetalleMetodos {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
 		
-			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://192.168.44.96:1433;databaseName=climusic","lucas","123456");
+			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=climusic1","sa","123456");
 			
 			Statement estado= con.createStatement();
 			

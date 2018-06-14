@@ -33,18 +33,17 @@ public class CarroDaoImpl implements CarroDao {
 	@Override
 	public boolean save(Carro cart) {
 		BeanPropertySqlParameterSource paramMap = new BeanPropertySqlParameterSource(cart);
-		return jdbcTemplate.update("insert into carro(id_factura,id_instrumento,cantidad) values(:id_factura,:id_instrumento,:cantidad)", paramMap) == 1;
+		return jdbcTemplate.update("insert into carro(id_factura,id_instrumento) values(:id_factura,:id_instrumento)", paramMap) == 1;
 	}
 
 	@Override
-	public List<Carro> buscarTodos() {
-		return jdbcTemplate.query("Select * from carro", new RowMapper<Carro>() {
+	public List<Carro> buscarTodos(int x) {
+		return jdbcTemplate.query("Select * from carro where id_factura="+x, new RowMapper<Carro>() {
 
 			public Carro mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Carro cart = new Carro();
 				cart.setId_instrumento(rs.getInt("id_instrumento"));
 				cart.setId_factura(rs.getInt("id_factura"));
-				cart.setCantidad(rs.getInt("cantidad"));
 				return cart;
 			}
 		});
@@ -78,6 +77,13 @@ public class CarroDaoImpl implements CarroDao {
 	public int[] grabarTodos(List<Carro> empleado) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+	@Override
+	public boolean querycondatos() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

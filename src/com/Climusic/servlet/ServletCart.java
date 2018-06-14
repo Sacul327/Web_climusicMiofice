@@ -47,11 +47,33 @@ public class ServletCart extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		String strProducto=request.getParameter("NroProducto");
-		String strCantidad=request.getParameter("cantidad");
 		int nroProducto= Integer.parseInt(strProducto);
-		int nroCantidad= Integer.parseInt(strCantidad);
 		InsertCarro cart= new InsertCarro();
-		cart.InsertCarro(nroCantidad, nroProducto);
+		cart.InsertCarro(nroProducto);
+		System.out.println("**************************************************************************************************");
+		System.out.println("**************************************************************************************************");
+		System.out.println(nroProducto);
+		System.out.println("**************************************************************************************************");
+		System.out.println("**************************************************************************************************");
+		
+		try {
+			/*List<Empleado> listEmp = *///empleadodao.buscarTodos();
+		/*	for (Empleado listEmp2 : listEmp) {*/
+				//request.getRequestDispatcher("usuarios.jsp").forward(request, response);
+			String redirect = response.encodeRedirectURL(request.getContextPath() + "/pantalla_ventas_prueba");
+			response.sendRedirect(redirect);
+
+			//}
+		
+		
+	} catch (CannotGetJdbcConnectionException ex) {
+		ex.printStackTrace();
+	} catch (DataAccessException e) {
+		e.printStackTrace();
+	}
+		
+		
+		
 		
 	}
 

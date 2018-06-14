@@ -10,12 +10,12 @@ import com.Climusic.Modelos.Carro;
 
 public class InsertCarro {
 	
-	public void InsertCarro(int cantidad,int id_instrumento) {
+	public void InsertCarro(int id_instrumento) {
 		ApplicationContext application= new ClassPathXmlApplicationContext("Spring.xml");
 		CarroDao cartdao = (CarroDao) application.getBean("CarroDao"); 
 		Carro cart = new Carro();
 		cart.setId_instrumento(id_instrumento);
-		cart.setCantidad(cantidad);
+		cart.setId_factura(1);
 		try {
 			cartdao.save(cart);
 			System.out.println("Registro salvado exitosamente");
