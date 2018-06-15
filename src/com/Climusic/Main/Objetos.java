@@ -23,7 +23,7 @@ public class Objetos implements DetalleMetodos {
 			
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
 			//192.168.44.96
-			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=climusic1","sa","123456");
+			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://192.168.44.96:1433;databaseName=climusic","lucas","123456");
 			Statement estado= con.createStatement();
 			ResultSet resultado= estado.executeQuery("SELECT * FROM productos");
 			System.out.println("marca \t modelo \t color");
@@ -46,7 +46,7 @@ public class Objetos implements DetalleMetodos {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
 			
-			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=climusic1","sa","123456");
+			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://192.168.44.96:1433;databaseName=climusic","lucas","123456");
 
 			Statement estado= con.createStatement();
 			ResultSet resultado= estado.executeQuery("SELECT email , password FROM empleado Where email = '"+
@@ -75,13 +75,10 @@ public class Objetos implements DetalleMetodos {
 	public boolean checkUser(String user, String pass) {
 		boolean existe=false;
 		if(listaUsuarios(user, pass) == true) {
-			//System.out.println("Bienvenido "+ user);
+			
 			existe=true;
-		}//else {
-			//System.out.println("usuario o contraseña incorrecta");
-		//}
+		}
 		return existe;
-
 	}
 
 	@Override
@@ -97,19 +94,19 @@ public class Objetos implements DetalleMetodos {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
 		
-			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=climusic1","sa","123456");
+			java.sql.Connection con= DriverManager.getConnection("jdbc:sqlserver://192.168.44.96:1433;databaseName=climusic","lucas","123456");
 			
 			Statement estado= con.createStatement();
 			
 			//ResultSet resultado= estado.executeQuery("SELECT permiso FROM sys_account WHERE id_permiso =2 AND doc_usser ='"+user+"';");
 			
-			ResultSet resultado= estado.executeQuery("select id_permiso,empleado.email from sys_permiso join empleado on empleado.permiso = sys_permiso.id_permiso where id_permiso = 2 AND empleado.email='"+user+"';");
+			ResultSet resultado= estado.executeQuery("select id_permiso,empleado.email from sys_permiso join empleado on empleado.permiso = sys_permiso.id_permiso where id_permiso = 1 AND empleado.email='"+user+"';");
 			
 			while(resultado.next()) {
 				
 				String res= resultado.getString("id_permiso");
 				
-				if(res.equals("2")) {
+				if(res.equals("1")) {
 					esAdmin=true;
 				}
 				

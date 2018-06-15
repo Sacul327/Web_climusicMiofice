@@ -9,25 +9,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.dao.DataAccessException;
-import org.springframework.jdbc.CannotGetJdbcConnectionException;
-
 
 import com.Climusic.Daos.CarroDao;
-import com.Climusic.InsertSql.InsertCarro;
 
 
 /**
- * Servlet implementation class ServletCart
+ * Servlet implementation class ServletCartQuitar
  */
-@WebServlet("/ServletCart")
-public class ServletCart extends HttpServlet {
+@WebServlet("/ServletCartQuitar")
+public class ServletCartQuitar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletCart() {
+    public ServletCartQuitar() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -46,25 +42,20 @@ public class ServletCart extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		String strProducto=request.getParameter("NroProducto");
+		
+		String strProducto=request.getParameter("NroProductoDrop");
 		int nroProducto= Integer.parseInt(strProducto);
-		InsertCarro cart= new InsertCarro();
-		cart.InsertCarro(nroProducto);
 		
-		try {
+		ApplicationContext application= new ClassPathXmlApplicationContext("Spring.xml");
+		CarroDao carrodao = (CarroDao) application.getBean("CarroDao"); 
+		carrodao.borrar(nroProducto);
 		
-			String redirect = response.encodeRedirectURL(request.getContextPath() + "/pantalla_ventas_prueba.jsp");
-			response.sendRedirect(redirect);
+		((ClassPathXmlApplicationContext)application).close();
+
 		
-		
-	} catch (CannotGetJdbcConnectionException ex) {
-		ex.printStackTrace();
-	} catch (DataAccessException e) {
-		e.printStackTrace();
-	}
-		
-		
-		
+		String redirect = response.encodeRedirectURL(request.getContextPath() + "/pantalla_ventas_prueba.jsp");
+		response.sendRedirect(redirect);
+
 		
 	}
 

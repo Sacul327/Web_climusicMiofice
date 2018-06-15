@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Component;
 
 
 import com.Climusic.Modelos.Carro;
+import com.Climusic.Productos.Productos;
 import com.Climusic.Modelos.Carro;
 @Component("CarroDao")
 public class CarroDaoImpl implements CarroDao {
@@ -37,14 +39,18 @@ public class CarroDaoImpl implements CarroDao {
 	}
 
 	@Override
-	public List<Carro> buscarTodos(int x) {
-		return jdbcTemplate.query("Select * from carro where id_factura="+x, new RowMapper<Carro>() {
+	public List<Productos> buscarTodos(/*int x*/) {
+		return jdbcTemplate.query("select productos.id_instrumento,productos.marca,productos.modelo,productos.precio,productos.color,productos.tipo from carro INNER JOIN productos ON carro.id_instrumento = productos.id_instrumento;" /*where id_factura="+x*/, new RowMapper<Productos>() {
 
-			public Carro mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Carro cart = new Carro();
-				cart.setId_instrumento(rs.getInt("id_instrumento"));
-				cart.setId_factura(rs.getInt("id_factura"));
-				return cart;
+			public Productos mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Productos prod = new Productos();
+				prod.setId_instrumento(rs.getInt("id_instrumento"));
+				prod.setMarca(rs.getString("marca"));
+				prod.setModelo(rs.getString("modelo"));
+				prod.setPrecio(rs.getFloat("precio"));
+				prod.setColor(rs.getString("color"));
+				prod.setTipo(rs.getString("tipo"));
+				return prod;
 			}
 		});
 	}
@@ -68,9 +74,9 @@ public class CarroDaoImpl implements CarroDao {
 	}
 
 	@Override
-	public boolean borrar(int id_factura) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean borrar(int id_instrumento) {
+		return jdbcTemplate.update("delete from carro Where id_instrumento="+id_instrumento, new MapSqlParameterSource("id_instrumento",id_instrumento
+				)) == 1;
 	}
 
 	@Override

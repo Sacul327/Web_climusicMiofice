@@ -80,13 +80,12 @@
 						<table class="table table-striped " id="tabla">
 							<thead>
 								<tr>
+									<th>N° Producto</th>
 									<th>Marca</th>
 									<th>Modelo</th>
 									<th>Precio</th>
-									<th>Stock</th>
 									<th>Color</th>
 									<th>Tipo</th>
-									<th>Detalle</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -95,12 +94,16 @@
 									CarroDao carrodao = (CarroDao) app.getBean("CarroDao");
 
 									try {
-										List<Carro> cart = carrodao.buscarTodos(1);
-										for (Carro cart2 : cart) {
+										List<Productos> cart = carrodao.buscarTodos();
+										for (Productos cart2 : cart) {
 								%>
 								<tr>
-									<td><%=cart2.getId_factura()%></td>
 									<td><%=cart2.getId_instrumento()%></td>
+									<td><%=cart2.getMarca()%></td>
+									<td><%=cart2.getModelo()%></td>
+									<td><%=cart2.getPrecio()%></td>
+									<td><%=cart2.getColor()%></td>
+									<td><%=cart2.getTipo()%></td>
 
 
 								</tr>
@@ -119,14 +122,17 @@
 						</table>
 					</form>
 					<!-- Drop from cart -->
-					<div id="addcart" class="input-group mb-3">
+					<form class="form-horizontal" action="ServletCartQuitar"
+						method="post">
+					<div id="dropcart" class="input-group mb-3">
 						<div class="input-group-prepend">
-							<button class="btn btn-outline-secondary" type="button">drop
+							<button class="btn btn-outline-secondary" type="submit">drop
 								from cart</button>
 						</div>
-						<input type="text" class="form-control" aria-label=""
+						<input name="NroProductoDrop" type="text" class="form-control" aria-label=""
 							aria-describedby="basic-addon1" placeholder="N° de producto">
 					</div>
+					</form>
 
 
 
@@ -137,6 +143,7 @@
 						<table class="table table-striped " id="tabla">
 							<thead>
 								<tr>
+									<th>N° Producto</th>
 									<th>Marca</th>
 									<th>Modelo</th>
 									<th>Precio</th>
@@ -184,8 +191,9 @@
 					<!-- Lista de productos Stockdentro del nav -->
 
 					<!-- Agregar al carro codigo -->
-					<div id="addcart" class="input-group mb-3" action="ServletCart"
+					<form class="form-horizontal" action="ServletCart"
 						method="post">
+					<div id="addcart" class="input-group mb-3" >
 						<div class="input-group-prepend">
 							<button class="btn btn-outline-secondary" type="submit">Add
 								to cart</button>
@@ -194,6 +202,7 @@
 							placeholder="N° de producto" aria-label=""
 							aria-describedby="basic-addon1">
 					</div>
+					</form>
 					<!-- Descripcion de los productos -->
 					<div class="card" style="width: 18rem;">
 						<div class="card-body">

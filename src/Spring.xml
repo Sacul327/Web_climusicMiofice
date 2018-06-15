@@ -15,9 +15,9 @@
 		value="com.microsoft.sqlserver.jdbc.SQLServerDriver">
 	</property>
 	<property name="url"
-		value="jdbc:sqlserver://localhost:1433;databaseName=climusic1">
+		value="jdbc:sqlserver://192.168.44.96:1433;databaseName=climusic">
 	</property>
-	<property name="username" value="sa"></property>
+	<property name="username" value="lucas"></property>
 	<property name="password" value="123456"></property>
 	</bean>
 </beans>
