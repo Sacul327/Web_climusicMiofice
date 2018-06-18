@@ -60,5 +60,9 @@ margenes{
 #tablapadre{
 	overflow: scroll;
 }
+tall{
+	height: 800px;	
+	
+}
 Para hacer scrolleable listProductos
 <!--overflow: scroll;-->

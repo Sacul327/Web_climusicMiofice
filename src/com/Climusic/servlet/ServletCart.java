@@ -53,7 +53,7 @@ public class ServletCart extends HttpServlet {
 		
 		try {
 		
-			String redirect = response.encodeRedirectURL(request.getContextPath() + "/pantalla_ventas_prueba.jsp");
+			String redirect = response.encodeRedirectURL(request.getContextPath() + "/pantalla_ventas_admin.jsp");
 			response.sendRedirect(redirect);
 		
 		

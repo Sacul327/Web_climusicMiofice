@@ -48,7 +48,7 @@
 	<form>
 		<div class="container-fluid">
 			<div class="row content">
-				<div class="col-sm-5 sidenav">
+				<div class="col-sm-5 sidenav tall">
 					<!-- <h1>Climusic</h1> -->
 					<!-- DropDown -->
 					<div class="dropdown">
@@ -225,7 +225,7 @@
 			</div>
 		</div>
 
-		<footer class="container-fluid"> <input
+		<footer class="container-fluid fixed-bottom"> <input
 			class="btn btn-primary" type="submit" value="Submit"> </footer>
 	</form>
 </body>

@@ -53,7 +53,7 @@ public class ServletCartQuitar extends HttpServlet {
 		((ClassPathXmlApplicationContext)application).close();
 
 		
-		String redirect = response.encodeRedirectURL(request.getContextPath() + "/pantalla_ventas_prueba.jsp");
+		String redirect = response.encodeRedirectURL(request.getContextPath() + "/pantalla_ventas_admin.jsp");
 		response.sendRedirect(redirect);
 
 		
