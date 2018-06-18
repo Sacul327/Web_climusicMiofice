@@ -51,20 +51,27 @@ public class ServletMain extends HttpServlet {
 		Objetos obj = new Objetos();
 		//sesiones.
 		obj.connectDB();
-		if(obj.checkUser(email, password)) {
+		/*if(obj.checkUser(email, password)) {
 			log.info("Bienvenido "+email);
 		}else {
 			log.warn("Usuario o contraseña incorrecta");
 			String redirect = response.encodeRedirectURL(request.getContextPath() + "/index.jsp");
 			response.sendRedirect(redirect);
-		}
+		}*/
 		System.out.println(obj.comprueboAdmin(email));
-		if(obj.comprueboAdmin(email)==true) {
+		if(obj.checkUser(email, password)==true && obj.comprueboAdmin(email)==true) {
 			String redirect = response.encodeRedirectURL(request.getContextPath() + "/pantalla_ventas_admin.jsp");
 			response.sendRedirect(redirect);
-		}else {
+		}else if (obj.checkUser(email, password)==true && obj.comprueboAdmin(email)==false){
 			String redirect = response.encodeRedirectURL(request.getContextPath() + "/pantalla_ventas.jsp");
-			response.sendRedirect(redirect);		}
+			response.sendRedirect(redirect);		
+			}
+		else {
+			String redirect = response.encodeRedirectURL(request.getContextPath() + "/loginerror.jsp");
+			response.sendRedirect(redirect);
+			
+
+		}
 		
 	}
 

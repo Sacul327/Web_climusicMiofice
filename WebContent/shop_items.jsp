@@ -21,37 +21,33 @@
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#"><img src="images/ClimusiclogoCortado.jpg" class="img-responsive imagen" style="width: 15%" alt="Image"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-          	<li class="nav-item active">
-              <a class="nav-link" href="#">Instrumentos
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.jsp">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+	<nav class="navbar navbar-expand-lg xx navbar-light bg-light fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="index.jsp"><img
+				src="images/ClimusiclogoCortado.jpg" class="img-responsive imagen"
+				style="width: 15%" alt="Image"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarResponsive" aria-controls="navbarResponsive"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link" href="index.jsp">Inicio</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="location.jsp">Encuentranos</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="login.jsp"><span
+							class="glyphicon glyphicon-user"></span> Log In</a></li>
+					<li class="nav-item"><a class="nav-link" href=""><span
+							class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+				</ul>
+				
+			</div>
+		</div>
+	</nav>
 
-    <!-- Page Content -->
+	<!-- Page Content -->
     <div class="container">
 
       <div class="row">

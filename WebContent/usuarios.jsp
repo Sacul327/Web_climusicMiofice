@@ -26,8 +26,8 @@
 
 </head>
 <body>
-	<div class="container-fluid bg-3">
-		<nav class="navbar navbar-inverse">
+	
+		<nav class="navbar navbar-inverse navbar-fixed-top">
 
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -38,15 +38,15 @@
 			<a class="navbar-brand" disabled>Lista Usuarios</a>
 
 		</div>
-		<div class="collapse navbar-collapse" id="navbarColor01">
-			<ul class="navbar-nav mr-auto">
-
-				<li class="nav-item"><a class="nav-link"
-					href="pantalla_ventas_admin.jsp">ventas</a></li>
-				<li class="nav-item disabled"><a class="nav-link"
-					href="usuarios.jsp">Administrar Usuarios</a></li>
-			</ul>
-		</div>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="pantalla_ventas_admin.jsp">Ventas</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="usuarios.jsp">Administrar Usuarios</a>
+					</li>
+				</ul>
+				
+			</div>
 
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<span class="navbar-toggler-icon"></span>
@@ -148,7 +148,6 @@
 			</form>
 
 		</div>
-	</div>
 
 
 </body>

@@ -4,8 +4,6 @@
 /* Remove the navbar's default margin-bottom and rounded borders */ 
 .navbar {
       margin-bottom: 0;
-      margin-top:20px;
-      border-radius: 10px;
     }
     /* Add a gray background color and some padding to the footer */
 footer {
@@ -29,3 +27,6 @@ footer {
 #tabla{
 	overflow: scroll;
 }
+.navbar-nav>li>a {
+    line-height: 50px;
+    padding-left: 13px;
