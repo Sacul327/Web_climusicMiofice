@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Productos - Climusic</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -57,7 +57,7 @@
           <h1 class="my-4">Instrumentos</h1>
           <div class="list-group">
             <a href="#" class="list-group-item">Guitarras</a>
-            <a href="#" class="list-group-item">Bajos</a>
+            <a href="bajos.jsp" class="list-group-item">Bajos</a>
             <a href="#" class="list-group-item">Baterias</a>
             <a href="#" class="list-group-item">Teclados</a>
             <a href="#" class="list-group-item">Microfonos</a>
@@ -105,7 +105,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="images/700x400/hartke.jpg" alt=""></a>
+                <a class="res" href="#"><img class="card-img-top" src="images/700x400/hartke.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">Hartke Hydrive 115C</a>
@@ -153,7 +153,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="images/700x400/ibañezsr300e.jpg" alt=""></a>
+                <a href="#"><img class="card-img-top" src="images/700x400/ibanezsr300e.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">Ibañez SR300</a>

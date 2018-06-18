@@ -30,6 +30,7 @@ public class Objetos implements DetalleMetodos {
 			while (resultado.next()) {
 				System.out.println(resultado.getString("marca")+" \t "+resultado.getString("modelo")+" \t "+resultado.getString("color"));
 			}
+			con.close();
 			
 		}catch(SQLException ex) {
 			System.out.println("Error mysql");
@@ -56,6 +57,7 @@ public class Objetos implements DetalleMetodos {
 				//System.out.println(resultado.getString("doc_usser"));
 				existe=true;
 			}
+			con.close();
 			
 		}catch(SQLException ex) {
 			System.out.println("Error sql");
@@ -111,6 +113,7 @@ public class Objetos implements DetalleMetodos {
 				}
 				
 			}
+			con.close();
 		}catch(SQLException ex) {
 			
 			log.error("Error mysql");
