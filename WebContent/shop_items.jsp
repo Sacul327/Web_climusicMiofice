@@ -56,7 +56,7 @@
 
           <h1 class="my-4">Instrumentos</h1>
           <div class="list-group">
-            <a href="#" class="list-group-item">Guitarras</a>
+            <a href="guitarras.jsp" class="list-group-item">Guitarras</a>
             <a href="bajos.jsp" class="list-group-item">Bajos</a>
             <a href="#" class="list-group-item">Baterias</a>
             <a href="#" class="list-group-item">Teclados</a>
@@ -105,7 +105,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a class="res" href="#"><img class="card-img-top" src="images/700x400/hartke.jpg" alt=""></a>
+                <a class="" href="#"><img class="card-img-top" src="images/700x400/hartke.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">Hartke Hydrive 115C</a>
@@ -214,7 +214,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Climusic 2018</p>
       </div>
       <!-- /.container -->
     </footer>

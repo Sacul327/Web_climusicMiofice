@@ -225,7 +225,7 @@
 			</div>
 		</div>
 
-		<footer class="container-fluid fixed-bottom"> <input
+		<footer class="container-fluid fixed-bottom"> <input href="factura.jsp"
 			class="btn btn-primary" type="submit" value="Submit"> </footer>
 	</form>
 </body>

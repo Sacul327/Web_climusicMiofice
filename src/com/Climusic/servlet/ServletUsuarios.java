@@ -79,8 +79,12 @@ public class ServletUsuarios extends HttpServlet {
 		
 	} catch (CannotGetJdbcConnectionException ex) {
 		ex.printStackTrace();
+		String redirect = response.encodeRedirectURL(request.getContextPath() + "/usuarioserror.jsp");
+		response.sendRedirect(redirect);
 	} catch (DataAccessException e) {
 		e.printStackTrace();
+		String redirect = response.encodeRedirectURL(request.getContextPath() + "/usuarioserror.jsp");
+		response.sendRedirect(redirect);
 	}
 		
 	//((ClassPathXmlApplicationContext)application).close();

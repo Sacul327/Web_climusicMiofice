@@ -21,7 +21,7 @@
       margin-bottom: 40px;
       background: url(images/tienda2.jpg)no-repeat center center ;
       height: 350px;
-      width: 1263px;
+      width: 100%;
       background-color: #262626;
     }
    
@@ -43,6 +43,9 @@
         margin-right: -50%;
         transform: translate(-50%, -50%)
     }
+    .panel-heading{
+    	background-color: #64dec1
+    }
   </style>
 </head>
 <body>
@@ -57,7 +60,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Climusic</a>
+      <a class="navbar-brand" href="">Climusic</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -83,24 +86,24 @@
 	<div class="container">    
   <div class="row">
     <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">REBAJA AL CONTADO</div>
+      <div class="panel panel-secondary">
+        <div class="panel-heading">REBAJA EFECTIVO</div>
         <div class="panel-body foto"><img src="images/principal_deal7.jpg" class="img-responsive imagen" style="width:75%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-footer"> Fender stratocaster 90°</div>
       </div>
     </div>
     <div class="col-sm-4"> 
-      <div class="panel panel-danger">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+      <div class="panel panel-secondary">
+        <div class="panel-heading">REBAJA EFECTIVO</div>
         <div class="panel-body foto"><img src="images/principal_deal8.jpg" class="img-responsive imagen" style="width:75%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-footer">Gibson thunderbird</div>
       </div>
     </div>
     <div class="col-sm-4"> 
-      <div class="panel panel-success">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+      <div class="panel panel-secondary">
+        <div class="panel-heading">REBAJA EFECTIVO</div>
         <div id="img" class="panel-body foto"><img src="images/principal_deal9.jpg" class="img-responsive imagen" style="width:75%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-footer">Fender Telecaster DELUXE</div>
       </div>
     </div>
   </div>
@@ -109,34 +112,34 @@
 <div class="container">    
   <div class="row">
     <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+      <div class="panel panel-secondary">
+        <div class="panel-heading">Cuotas sin interes disponibles</div>
         <div class="panel-body foto"><img src="images/principal_deal10.jpg" class="img-responsive imagen" style="width:75%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-footer">Squier acoustic guitar</div>
       </div>
     </div>
     <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+      <div class="panel panel-secondary">
+        <div class="panel-heading">Cuotas sin interes disponibles</div>
         <div class="panel-body foto"><img src="images/principal_deal11.jpg" class="img-responsive imagen" style="width:75%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-footer">ibañez 5 String active bass</div>
       </div>
     </div>
     <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+      <div class="panel panel-secondary">
+        <div class="panel-heading">Cuotas sin interes disponibles</div>
         <div class="panel-body foto"><img src="images/principal_deal12.jpg" class="img-responsive imagen" style="width:75%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-footer">Gibson Les Paul Special Edition </div>
       </div>
     </div>
   </div>
 </div><br><br>
 
 <footer class="container-fluid text-center">
-  <p>Online Store Copyright</p>  
-  <form class="form-inline">Get deals:
-    <input type="email" class="form-control" size="50" placeholder="Email Address">
-    <button type="button" class="btn btn-danger">Sign Up</button>
+  <p>Climusic - Copyright</p>  
+<!--   <form class="form-inline">Get deals: -->
+<!--     <input type="email" class="form-control" size="50" placeholder="Email Address"> -->
+<!--     <button type="button" class="btn btn-danger">Sign Up</button> -->
   </form>
 </footer>
 
