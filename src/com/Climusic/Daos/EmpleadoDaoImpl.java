@@ -30,14 +30,6 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 	
 	@Override
 	public boolean save(Empleado empleado) {
-		/*MapSqlParameterSource paramMap=new MapSqlParameterSource();
-		System.out.println(empleado.toString());
-		paramMap.addValue("nombre", empleado.getNombre());
-		paramMap.addValue("apellido", empleado.getApellido());
-		paramMap.addValue("email", empleado.getEmail());
-		paramMap.addValue("documento", empleado.getDocumento());
-		paramMap.addValue("contraseña", empleado.getContraseña());
-		paramMap.addValue("permiso", empleado.getPermiso());*/
 		BeanPropertySqlParameterSource paramMap = new BeanPropertySqlParameterSource(empleado);
 		return jdbcTemplate.update("insert into empleado(nombre,apellido,email,documento,password,permiso) values(:nombre,:apellido,:email,:documento,:password,:permiso)", paramMap) == 1;
 	}
@@ -88,6 +80,37 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 		SqlParameterSource[] batchArgs = SqlParameterSourceUtils.createBatch(empleado.toArray());
 		return jdbcTemplate.batchUpdate("insert into empleado (nombre,apellido,documento,email,password,privilegio) values (:nombre,:apellido,:documento,:email,:password,:privilegio)", batchArgs);
 		
+	}
+
+	@Override
+	public boolean listaEmpleados(String email, String password) {
+		boolean existe=false;
+		Empleado emp= jdbcTemplate.queryForObject("Select * from empleado where email=:email AND ", new MapSqlParameterSource("email",email),new EmpleadoRowMapper());
+		if(emp.getEmail()==email && emp.getEmail()== password) {
+			existe=true;
+		}
+		return existe;
+	}
+
+	@Override
+	public boolean checkUser(String user, String pass) {
+		boolean existe=false;
+		if(listaEmpleados(user, pass) == true) {
+			existe=true;
+		}
+		System.out.println("El usuario es correcto");
+		return existe;
+	}
+
+	@Override
+	public boolean comprueboAdmin(String email) {
+		boolean existe=false;
+		Empleado emp= jdbcTemplate.queryForObject("Select * from empleado where email=:email AND ", new MapSqlParameterSource("email",email),new EmpleadoRowMapper());
+		if(emp.getPermiso()==1) {
+			existe=true;
+		}
+		System.out.println("Es admin");
+		return existe;
 	}
 
 }

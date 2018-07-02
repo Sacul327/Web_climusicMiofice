@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,11 +14,11 @@
 
 <title>Bajos - Climusic</title>
 
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+ <!-- Bootstrap core CSS -->
+    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
 
-<!-- Custom styles for this template -->
-<link href="css/shop-homepage.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+	<link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
 </head>
 
 <body>
@@ -25,8 +26,8 @@
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg xx navbar-light bg-light fixed-top">
 		<div class="container">
-			<a class="navbar-brand" href="index.jsp"><img
-				src="images/ClimusiclogoCortado.jpg" class="img-responsive imagen"
+			<a class="navbar-brand" href='<c:url value="/"/>'><img
+				src='<c:url value="/resources/images/ClimusiclogoCortado.jpg"/>' class="img-responsive imagen"
 				style="width: 15%" alt="Image"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -35,16 +36,16 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="index.jsp">Inicio</a>
+					<li class="nav-item"><a class="nav-link" href='<c:url value="/"/>'>Inicio</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="location.jsp">Encuentranos</a>
+					<li class="nav-item"><a class="nav-link" href='<c:url value="/location"/>'>Encuentranos</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="login.jsp"><span
+					<li class="nav-item"><a class="nav-link" href='<c:url value="/login"/>'><span
 							class="glyphicon glyphicon-user"></span> Log In</a></li>
 					<li class="nav-item"><a class="nav-link" href=""><span
 							class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 				</ul>
-
+				
 			</div>
 		</div>
 	</nav>
@@ -58,8 +59,8 @@
 
 				<h1 class="my-4">Instrumentos</h1>
 				<div class="list-group">
-					<a href="guitarras.jsp" class="list-group-item">Guitarras</a> <a
-						href="bajos.jsp" class="list-group-item">Bajos</a> <a href="#"
+					<a href='<c:url value="/guitarras"/>' class="list-group-item">Guitarras</a> <a
+						href='<c:url value="/bajos"/>' class="list-group-item">Bajos</a> <a href="#"
 						class="list-group-item">Baterias</a> <a href="#"
 						class="list-group-item">Teclados</a> <a href="#"
 						class="list-group-item">Microfonos</a> <a href="#"
@@ -211,8 +212,8 @@
 	</footer>
 
 	<!-- Bootstrap core JavaScript -->
-	<script src="jquery/jquery.min.js"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src='<c:url value="/resources/jquery/jquery.min.js"/>'></script>
+    <script src='<c:url value="/resources/js/bootstrap.bundle.min.js"/>'></script>
 
 </body>
 

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <html lang="en">
 
   <head>
@@ -11,11 +13,10 @@
     <title>Productos - Climusic</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
-
+	<link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
   </head>
 
   <body>
@@ -23,8 +24,8 @@
     <!-- Navigation -->
 	<nav class="navbar navbar-expand-lg xx navbar-light bg-light fixed-top">
 		<div class="container">
-			<a class="navbar-brand" href="index.jsp"><img
-				src="images/ClimusiclogoCortado.jpg" class="img-responsive imagen"
+			<a class="navbar-brand" href='<c:url value="/"/>'><img
+				src='<c:url value="/resources/images/ClimusiclogoCortado.jpg"/>' class="img-responsive imagen"
 				style="width: 15%" alt="Image"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -33,11 +34,11 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="index.jsp">Inicio</a>
+					<li class="nav-item"><a class="nav-link" href='<c:url value="/"/>'>Inicio</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="location.jsp">Encuentranos</a>
+					<li class="nav-item"><a class="nav-link" href='<c:url value="/location"/>'>Encuentranos</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="login.jsp"><span
+					<li class="nav-item"><a class="nav-link" href='<c:url value="/login"/>'><span
 							class="glyphicon glyphicon-user"></span> Log In</a></li>
 					<li class="nav-item"><a class="nav-link" href=""><span
 							class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
@@ -56,8 +57,8 @@
 
           <h1 class="my-4">Instrumentos</h1>
           <div class="list-group">
-            <a href="guitarras.jsp" class="list-group-item">Guitarras</a>
-            <a href="bajos.jsp" class="list-group-item">Bajos</a>
+            <a href='<c:url value="/guitarras"/>' class="list-group-item">Guitarras</a>
+            <a href='<c:url value="/bajos"/>' class="list-group-item">Bajos</a>
             <a href="#" class="list-group-item">Baterias</a>
             <a href="#" class="list-group-item">Teclados</a>
             <a href="#" class="list-group-item">Microfonos</a>
@@ -79,16 +80,16 @@
             </ol>
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <img class="d-block img-fluid" src="images/modificartamanio/Gibson_sg_Custom_1963.jpg" alt="First slide">
+                <img class="d-block img-fluid" src='<c:url value="/resources/images/modificartamanio/Gibson_sg_Custom_1963.jpg"/>' alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block img-fluid" src="images/modificartamanio/danelectro2.jpg" alt="Second slide">
+                <img class="d-block img-fluid" src='<c:url value="/resources/images/modificartamanio/danelectro2.jpg"/>' alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block img-fluid" src="images/modificartamanio/presicionbass.jpg" alt="Third slide">
+                <img class="d-block img-fluid" src='<c:url value="/resources/images/modificartamanio/presicionbass.jpg"/>' alt="Third slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block img-fluid" src="images/modificartamanio/stratocaster.jpg" alt="Fourth slide">
+                <img class="d-block img-fluid" src='<c:url value="/resources/images/modificartamanio/stratocaster.jpg"/>' alt="Fourth slide">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -105,7 +106,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a class="" href="#"><img class="card-img-top" src="images/700x400/hartke.jpg" alt=""></a>
+                <a class="" href="#"><img class="card-img-top" src='<c:url value="/resources/images/700x400/hartke.jpg"/>' alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">Hartke Hydrive 115C</a>
@@ -121,7 +122,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="images/700x400/bossloopstation.jpg" alt=""></a>
+                <a href="#"><img class="card-img-top" src='<c:url value="/resources/images/700x400/bossloopstation.jpg"/>' alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">Boss Loop Station</a>
@@ -137,7 +138,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="images/700x400/ibanez_pf15ece_nt.jpg" alt=""></a>
+                <a href="#"><img class="card-img-top" src='<c:url value="/resources/images/700x400/ibanez_pf15ece_nt.jpg"/>' alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">Ibañez acustic guitar</a>
@@ -153,7 +154,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="images/700x400/ibanezsr300e.jpg" alt=""></a>
+                <a href="#"><img class="card-img-top" src='<c:url value="/resources/images/700x400/ibanezsr300e.jpg"/>' alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">Ibañez SR300</a>
@@ -169,7 +170,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="images/700x400/synthmicrokorg.jpg" alt=""></a>
+                <a href="#"><img class="card-img-top" src='<c:url value="/resources/images/700x400/synthmicrokorg.jpg"/>' alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">KORG Microkorg</a>
@@ -185,7 +186,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="images/700x400/tamastarclasic.jpg" alt=""></a>
+                <a href="#"><img class="card-img-top" src='<c:url value="/resources/images/700x400/tamastarclasic.jpg"/>' alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">Tama Star Clasic</a>
@@ -220,8 +221,10 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="jquery/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+<!--     <script src="jquery/jquery.min.js"></script> -->
+   	<script src='<c:url value="/resources/jquery/jquery.min.js"/>'></script>
+    <script src='<c:url value="/resources/js/bootstrap.bundle.min.js"/>'></script>
+    
 
   </body>
 

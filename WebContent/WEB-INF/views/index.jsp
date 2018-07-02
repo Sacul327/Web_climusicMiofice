@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <html lang="en">
 <head>
   <title>Climusic</title>
@@ -19,7 +21,7 @@
      
       background-color: #fff;
       margin-bottom: 40px;
-      background: url(images/tienda2.jpg)no-repeat center center ;
+      background: url(resources/images/tienda2.jpg)no-repeat center center ;
       height: 350px;
       width: 100%;
       background-color: #262626;
@@ -47,6 +49,7 @@
     	background-color: #64dec1
     }
   </style>
+  
 </head>
 <body>
 
@@ -64,12 +67,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Inicio</a></li>
-        <li><a href="shop_items.jsp">Productos</a></li>
-        <li><a href="location.jsp">Encuentranos</a></li>
+        <li class="active"><a href='<c:url value="/"/>'>Inicio</a></li>
+        <li><a href='<c:url value="/Productos"/>'>Productos</a></li>
+        <li><a href='<c:url value="/location"/>'>Encuentranos</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.jsp"><span class="glyphicon glyphicon-user"></span> Log In</a></li>
+        <li><a href='<c:url value="/springLog"/>'><span class="glyphicon glyphicon-user"></span> Log In</a></li>
         <li><a href=""><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
       </ul>
     </div>
@@ -88,21 +91,21 @@
     <div class="col-sm-4">
       <div class="panel panel-secondary">
         <div class="panel-heading">REBAJA EFECTIVO</div>
-        <div class="panel-body foto"><img src="images/principal_deal7.jpg" class="img-responsive imagen" style="width:75%" alt="Image"></div>
+        <div class="panel-body foto"><img src='<c:url value="/resources/images/principal_deal7.jpg"/>' class="img-responsive imagen" style="width:75%" alt="Image"></div>
         <div class="panel-footer"> Fender stratocaster 90°</div>
       </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-secondary">
         <div class="panel-heading">REBAJA EFECTIVO</div>
-        <div class="panel-body foto"><img src="images/principal_deal8.jpg" class="img-responsive imagen" style="width:75%" alt="Image"></div>
+        <div class="panel-body foto"><img src='<c:url value="/resources/images/principal_deal8.jpg"/>' class="img-responsive imagen" style="width:75%" alt="Image"></div>
         <div class="panel-footer">Gibson thunderbird</div>
       </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-secondary">
         <div class="panel-heading">REBAJA EFECTIVO</div>
-        <div id="img" class="panel-body foto"><img src="images/principal_deal9.jpg" class="img-responsive imagen" style="width:75%" alt="Image"></div>
+        <div id="img" class="panel-body foto"><img src='<c:url value="/resources/images/principal_deal9.jpg"/>' class="img-responsive imagen" style="width:75%" alt="Image"></div>
         <div class="panel-footer">Fender Telecaster DELUXE</div>
       </div>
     </div>
@@ -114,21 +117,21 @@
     <div class="col-sm-4">
       <div class="panel panel-secondary">
         <div class="panel-heading">Cuotas sin interes disponibles</div>
-        <div class="panel-body foto"><img src="images/principal_deal10.jpg" class="img-responsive imagen" style="width:75%" alt="Image"></div>
+        <div class="panel-body foto"><img src='<c:url value="/resources/images/principal_deal10.jpg"/>' class="img-responsive imagen" style="width:75%" alt="Image"></div>
         <div class="panel-footer">Squier acoustic guitar</div>
       </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-secondary">
         <div class="panel-heading">Cuotas sin interes disponibles</div>
-        <div class="panel-body foto"><img src="images/principal_deal11.jpg" class="img-responsive imagen" style="width:75%" alt="Image"></div>
+        <div class="panel-body foto"><img src='<c:url value="/resources/images/principal_deal11.jpg"/>' class="img-responsive imagen" style="width:75%" alt="Image"></div>
         <div class="panel-footer">ibañez 5 String active bass</div>
       </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-secondary">
         <div class="panel-heading">Cuotas sin interes disponibles</div>
-        <div class="panel-body foto"><img src="images/principal_deal12.jpg" class="img-responsive imagen" style="width:75%" alt="Image"></div>
+        <div class="panel-body foto"><img src='<c:url value="/resources/images/principal_deal7.jpg"/>' class="img-responsive imagen" style="width:75%" alt="Image"></div>
         <div class="panel-footer">Gibson Les Paul Special Edition </div>
       </div>
     </div>

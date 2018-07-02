@@ -16,8 +16,7 @@ import org.apache.log4j.BasicConfigurator;
 public class Objetos implements DetalleMetodos {
 	static Logger log= Logger.getLogger(Objetos.class);
 	
-	//arreglo para usuarios
-	List <String> idUs =new ArrayList();
+	
 	public void connectDB(){
 		try {
 			
@@ -77,7 +76,6 @@ public class Objetos implements DetalleMetodos {
 	public boolean checkUser(String user, String pass) {
 		boolean existe=false;
 		if(listaUsuarios(user, pass) == true) {
-			
 			existe=true;
 		}
 		return existe;
