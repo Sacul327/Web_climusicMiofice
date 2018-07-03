@@ -12,6 +12,7 @@ import com.Climusic.Daos.EmpleadoDao;
 @Service
 public class LoginService {
 	
+	@Autowired
 	private EmpleadoDao	empleadoDao;
 	
 	

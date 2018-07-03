@@ -85,7 +85,8 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 	@Override
 	public boolean listaEmpleados(String email, String password) {
 		boolean existe=false;
-		Empleado emp= jdbcTemplate.queryForObject("Select * from empleado where email=:email AND ", new MapSqlParameterSource("email",email),new EmpleadoRowMapper());
+		Empleado emp= jdbcTemplate.queryForObject("Select * from empleado where email=:email", new MapSqlParameterSource("email",email),new EmpleadoRowMapper());
+		System.out.println(emp);
 		if(emp.getEmail()==email && emp.getEmail()== password) {
 			existe=true;
 		}
@@ -105,7 +106,8 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 	@Override
 	public boolean comprueboAdmin(String email) {
 		boolean existe=false;
-		Empleado emp= jdbcTemplate.queryForObject("Select * from empleado where email=:email AND ", new MapSqlParameterSource("email",email),new EmpleadoRowMapper());
+		Empleado emp= jdbcTemplate.queryForObject("Select * from empleado where email=:email", new MapSqlParameterSource("email",email),new EmpleadoRowMapper());
+		System.out.println("llegue aqui COMPRUEBO ADM");
 		if(emp.getPermiso()==1) {
 			existe=true;
 		}

@@ -1,7 +1,10 @@
 package com.Climusic.Controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.Climusic.Modelos.Empleado;
 
 @Controller
 public class IndexController {
@@ -48,7 +51,9 @@ public class IndexController {
 		return "usuarios";
 	}
 	@RequestMapping("/springLog")
-	public String ShowSpringlog() {
+	public String ShowSpringlog(Model model) {
+		Empleado empleado= new Empleado();
+		model.addAttribute("empleado", empleado);
 		return "loginSpring";
 	}
 	

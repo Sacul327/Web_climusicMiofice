@@ -29,7 +29,7 @@
 
   <body class="text-center">
  
-    <sf:form action="${pageContext.request.contextPath}/empleado/ingreso" method="post" commandName="Empleado" cssClass="form-signin">
+    <sf:form action="${pageContext.request.contextPath}/empleado/ingreso" method="post" commandName="empleado" cssClass="form-signin">
       <a class="navbar-brand" href='<c:url value="/"/>'><img src='<c:url value="/resources/images/ClimusiclogoCortado.jpg"/>' class="img-responsive pos" style="width: 100%" alt="Image"></a>
       <h3 class="h6 mb-3 font-weight-normal">Please sign in</h3>
       <label for="inputEmail" class="sr-only">Email address</label>

@@ -18,14 +18,22 @@ public class LoginController {
 	private LoginService loginService;
 	
 	@RequestMapping(value="/empleado/ingreso",method=RequestMethod.POST)
-	public String handlAdmin(@ModelAttribute("empleado") Empleado empleadoForm, Model model, RedirectAttributes ra
-			/*,@RequestParam("fuera") String fuera*/) {
-		model.addAttribute("login", new Login());
+	public String handlAdmin(@ModelAttribute("empleado") Empleado empleadoForm, Model model/*,RedirectAttributes ra
+			,@RequestParam("fuera") String fuera*/) {
+		model.addAttribute("empleadoForm", empleadoForm);
+		System.out.println(empleadoForm.getEmail());
+		System.out.println(empleadoForm.getPassword());
 		if(empleadoForm.getEmail()!=null) {
-			if(loginService.checkUser(empleadoForm.getEmail(), empleadoForm.getPassword()) && loginService.comprueboAdmin(empleadoForm.getEmail())) {
-				return "/PantallaVentasAdm";
+			
+			if(loginService.checkUser(empleadoForm.getEmail(), empleadoForm.getPassword())==true){
+				System.out.println("********************************************");
+				System.out.println("      Llegamos afuera del segundo IF");
+				System.out.println("********************************************");
+				return "/PantallaVentasAdm";				
+			}else {
+				return "redirect:/";
 			}
 		}
-		return "/"; //Redirect envia parametros a otro metodo
+		return null; //Redirect/: envia parametros a otro metodo
 	}
 }

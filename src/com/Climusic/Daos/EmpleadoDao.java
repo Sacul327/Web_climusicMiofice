@@ -14,8 +14,8 @@ public interface EmpleadoDao {
 	public boolean borrar(int id_empleado);
 	public int[] grabarTodos(List<Empleado> empleado);
 	public boolean listaEmpleados(String email, String password);
-	boolean checkUser(String user, String pass);
-	boolean comprueboAdmin(String user);
+	public boolean checkUser(String user, String pass);
+	public boolean comprueboAdmin(String user);
 	
 	
 }
