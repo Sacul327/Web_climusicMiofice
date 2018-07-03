@@ -86,9 +86,11 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 	public boolean listaEmpleados(String email, String password) {
 		boolean existe=false;
 		Empleado emp= jdbcTemplate.queryForObject("Select * from empleado where email=:email", new MapSqlParameterSource("email",email),new EmpleadoRowMapper());
-		System.out.println(emp);
-		if(emp.getEmail()==email && emp.getEmail()== password) {
+//		System.out.println(emp.getEmail()+"-----"+emp.getPassword());
+//		System.out.println(email+"----"+password);
+		if(email.equals(emp.getEmail()) & password.equals(emp.getPassword())) {
 			existe=true;
+				System.out.println("logre comprobar que el email y usuario estan dentrode la base");
 		}
 		return existe;
 	}
@@ -98,8 +100,8 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 		boolean existe=false;
 		if(listaEmpleados(user, pass) == true) {
 			existe=true;
+			System.out.println("El usuario es correcto");
 		}
-		System.out.println("El usuario es correcto");
 		return existe;
 	}
 

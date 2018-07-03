@@ -29,7 +29,7 @@ public class LoginController {
 				System.out.println("********************************************");
 				System.out.println("      Llegamos afuera del segundo IF");
 				System.out.println("********************************************");
-				return "/PantallaVentasAdm";				
+				return "redirect:PantallaVentasAdm";				
 			}else {
 				return "redirect:/";
 			}
