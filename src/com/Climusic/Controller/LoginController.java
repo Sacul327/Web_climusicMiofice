@@ -17,6 +17,11 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 	
+	@RequestMapping("/PantallaVentasAdmin")
+	public String showPantallaVentasAdm() {
+		return "pantalla_ventas_admin";
+	}
+	
 	@RequestMapping(value="/empleado/ingreso",method=RequestMethod.POST)
 	public String handlAdmin(@ModelAttribute("empleado") Empleado empleadoForm, Model model/*,RedirectAttributes ra
 			,@RequestParam("fuera") String fuera*/) {
@@ -27,9 +32,9 @@ public class LoginController {
 			
 			if(loginService.checkUser(empleadoForm.getEmail(), empleadoForm.getPassword())==true){
 				System.out.println("********************************************");
-				System.out.println("      Llegamos afuera del segundo IF");
+				System.out.println("      logro comprobar");
 				System.out.println("********************************************");
-				return "redirect:PantallaVentasAdm";				
+				return "/pantalla_ventas_admin";				
 			}else {
 				return "redirect:/";
 			}

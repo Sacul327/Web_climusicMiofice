@@ -24,11 +24,6 @@ public class IndexController {
 		return "login";
 	}
 	
-	@RequestMapping("/PantallaVentasAdm")
-	public String showPantallaVentasAdm() {
-		return "pantalla_ventas_admin";
-	}
-	
 	@RequestMapping("/pantallaVentas")
 	public String showPantallaVentas() {
 		return "pantalla_ventas";
