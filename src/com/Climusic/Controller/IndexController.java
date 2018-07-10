@@ -52,4 +52,6 @@ public class IndexController {
 		return "loginSpring";
 	}
 	
+	
+	
 }

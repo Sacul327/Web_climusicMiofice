@@ -10,7 +10,7 @@ import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import com.Climusic.Daos.EmpleadoDao;
 import com.Climusic.Daos.EmpleadoDaoImpl;
 import com.Climusic.Daos.ProductoDao;
-import com.Climusic.Productos.Productos;
+import com.Climusic.Modelos.Productos;
 
 public class Main {
 	

@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 
 
 import com.Climusic.Modelos.Carro;
-import com.Climusic.Productos.Productos;
+import com.Climusic.Modelos.Productos;
 import com.Climusic.Modelos.Carro;
 @Component("CarroDao")
 public class CarroDaoImpl implements CarroDao {

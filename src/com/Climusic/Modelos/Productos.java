@@ -1,4 +1,4 @@
-package com.Climusic.Productos;
+package com.Climusic.Modelos;
 
 public class Productos {
 	

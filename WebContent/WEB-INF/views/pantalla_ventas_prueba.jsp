@@ -7,12 +7,12 @@
 <%@ page import="com.Climusic.Daos.CarroDao"%>
 <%@ page import="com.Climusic.Modelos.Carro"%>
 <%@ page import="com.Climusic.Daos.ProductoDao"%>
-<%@ page import="com.Climusic.Productos.Productos"%>
+<%@ page import="com.Climusic.Modelos.Productos"%>
 <%@ page import="java.util.List"%>
 <%@ page
 	import="org.springframework.jdbc.CannotGetJdbcConnectionException"%>
 <%@ page import="org.springframework.dao.DataAccessException"%>
-<%@ page import="org.apache.catalina.core.ApplicationContextFacade"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -21,12 +21,9 @@
 <title>Ventas</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/pantalladVentas.css" />" rel="stylesheet">
 
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<link href="css/pantalladVentas.css" rel="stylesheet">
 </head>
 <body>
 	<!-- NAVBAR -->
@@ -89,34 +86,19 @@
 								</tr>
 							</thead>
 							<tbody>
-								<%
-									ApplicationContext app = new ClassPathXmlApplicationContext("Spring.xml");
-									CarroDao carrodao = (CarroDao) app.getBean("CarroDao");
-
-									try {
-										List<Productos> cart = carrodao.buscarTodos();
-										for (Productos cart2 : cart) {
-								%>
-								<tr>
-									<td><%=cart2.getId_instrumento()%></td>
-									<td><%=cart2.getMarca()%></td>
-									<td><%=cart2.getModelo()%></td>
-									<td><%=cart2.getPrecio()%></td>
-									<td><%=cart2.getColor()%></td>
-									<td><%=cart2.getTipo()%></td>
+<%-- 								<c:forEach var = "i"  items="${carro}"> --%>
+<!-- 								<tr> -->
+<%-- 									<td><c:out value="${i.getId_instrumento()}"/></td> --%>
+<%-- 									<td><c:out value="${i.getMarca()}"/></td> --%>
+<%-- 									<td><c:out value="${i.getModelo()}"/></td> --%>
+<%-- 									<td><c:out value="${i.getPrecio()}"/></td> --%>
+<%-- 									<td><c:out value="${i.getColor()}"/></td> --%>
+<%-- 									<td><c:out value="${i.getTipo()}"/></td> --%>
 
 
-								</tr>
-								<%
-									}
-									} catch (CannotGetJdbcConnectionException ex) {
-										ex.printStackTrace();
-									} catch (DataAccessException e) {
-										e.printStackTrace();
-									}
-
-									//((ClassPathXmlApplicationContext) app).close();
-								%>
+<!-- 								</tr> -->
+<%-- 								</c:forEach> --%>
+								
 
 							</tbody>
 						</table>
@@ -154,35 +136,18 @@
 								</tr>
 							</thead>
 							<tbody>
-								<%
-									//ApplicationContext app2 = new ClassPathXmlApplicationContext("Spring.xml");
-									ProductoDao productodao = (ProductoDao) app.getBean("ProductoDao");
-
-									try {
-										List<Productos> pro = productodao.buscarTodos();
-										for (Productos pro2 : pro) {
-								%>
-								<tr>
-									<td><%=pro2.getId_instrumento()%></td>
-									<td><%=pro2.getMarca()%></td>
-									<td><%=pro2.getModelo()%></td>
-									<td><%=pro2.getPrecio()%></td>
-									<td><%=pro2.getStock()%></td>
-									<td><%=pro2.getColor()%></td>
-									<td><%=pro2.getTipo()%></td>
-									<td><%=pro2.getTipo_detalle()%></td>
-								</tr>
-								<%
-									}
-									} catch (CannotGetJdbcConnectionException ex) {
-										ex.printStackTrace();
-									} catch (DataAccessException e) {
-										e.printStackTrace();
-									}
-
-									((ClassPathXmlApplicationContext) app).close();
-								%>
-
+								<c:forEach var="i" items="${productos}">
+									<tr>
+										<td><c:out value="${i.getId_instrumento()}" />.getId_instrumento()</td>
+										<td><c:out value="${i.getMarca()}" /></td>
+										<td><c:out value="${i.getModelo()}" /></td>
+										<td><c:out value="${i.getPrecio()}" /></td>
+										<td><c:out value="${i.getStock()}" /></td>
+										<td><c:out value="${i.getColor()}" /></td>
+										<td><c:out value="${i.getTipo()}" /></td>
+										<td><c:out value="${i.getTipo_detalle()}" /></td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</form>
@@ -229,5 +194,10 @@
 		<footer class="container-fluid"> <input
 			class="btn btn-primary" type="submit" value="Submit"> </footer>
 	</form>
+<script src='<c:url value="/resources/js/bootstrap.min.js"/>'></script>
+
+<script src='<c:url value="/resources/js/bootstrap.min.js"/>'></script>
+
+<script src='<c:url value="/resources/js/jquery.min.js"/>'></script>
 </body>
 </html>

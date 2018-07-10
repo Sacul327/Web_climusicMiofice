@@ -6,6 +6,9 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.SqlParameter;
@@ -15,12 +18,25 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSourceUtils;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.Climusic.Modelos.Empleado;
-import com.Climusic.Productos.Productos;
+import com.Climusic.Modelos.Productos;
 
+@Transactional
+@Repository
 @Component("ProductoDao")
 public class ProductoDaoImpl implements ProductoDao {
+	
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	public Session getSession() {	
+			return sessionFactory.getCurrentSession();
+	}
+	
 
 	private NamedParameterJdbcTemplate jdbcTemplate;
 	
@@ -45,22 +61,10 @@ public class ProductoDaoImpl implements ProductoDao {
 
 	@Override
 	public List<Productos> buscarTodos() {
-		return jdbcTemplate.query("Select * from productos", new RowMapper<Productos>() {
-
-			public Productos mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Productos pro = new Productos();
-				pro.setId_instrumento(rs.getInt("id_instrumento"));
-				pro.setMarca(rs.getString("marca"));
-				pro.setPrecio(rs.getFloat("precio"));
-				pro.setStock(rs.getInt("stock"));
-				pro.setModelo(rs.getString("modelo"));
-				pro.setTipo(rs.getString("tipo"));
-				pro.setTipo_detalle("tipo_detalle");
-				pro.setColor(rs.getString("color"));
-				pro.setProveedor_id(rs.getInt("proveedor_id"));
-				return pro;
-			}
-		});
+			List<Productos> prod= null;
+			Query q = (Query) getSession().createQuery("select * from Admin");
+			prod=q.list();
+			return prod;
 	}
 
 

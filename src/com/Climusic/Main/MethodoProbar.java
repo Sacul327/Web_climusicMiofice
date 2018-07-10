@@ -9,7 +9,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
 
 import com.Climusic.Daos.ProductoDao;
-import com.Climusic.Productos.Productos;
+import com.Climusic.Modelos.Productos;
 
 public class MethodoProbar {
 	

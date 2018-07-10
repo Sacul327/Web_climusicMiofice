@@ -8,7 +8,7 @@ public interface EmpleadoDao {
 
 	public boolean save(Empleado producto);
 	public List<Empleado> buscarTodos();
-	public Empleado buscarXId(int id_empleado);
+	public Empleado buscarXEmail(String email);
 	public List<Empleado> buscarXNombre(String nombre/*,String apellido*/);
 	public boolean actualizar(Empleado admin);
 	public boolean borrar(int id_empleado);

@@ -28,6 +28,9 @@ public class LoginService {
 		return empleadoDao.comprueboAdmin(user);
 	}
 	
+	public void buscarXEmail(String email) {
+		empleadoDao.buscarXEmail(email);
+	}
 	
 
 }

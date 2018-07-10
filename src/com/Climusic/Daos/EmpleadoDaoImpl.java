@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.SqlParameter;
@@ -15,13 +17,26 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSourceUtils;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.Climusic.Modelos.Empleado;
 
+@Transactional
+@Repository
 @Component("EmpleadoDao")
 public class EmpleadoDaoImpl implements EmpleadoDao {
 
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+	
 	private NamedParameterJdbcTemplate jdbcTemplate;
+	
+	
+	public Session getSession() {	
+		return sessionFactory.getCurrentSession();
+}
 	
 	@Autowired
 	private void setDataSource(DataSource dataSource) {
@@ -52,9 +67,15 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 		});
 	}
 
-	@Override
+	/*@Override
 	public Empleado buscarXId(int id_empleado) {
 		return jdbcTemplate.queryForObject("Select * from empleado where id_empleado = :id_empleado", new MapSqlParameterSource("id_empleado",id_empleado),new EmpleadoRowMapper());
+	}*/
+	
+	@Override
+	public Empleado buscarXEmail(String email) {
+		System.out.println(getSession().get(Empleado.class, email));
+		return getSession().get(Empleado.class, email);
 	}
 
 	@Override
@@ -101,6 +122,8 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 		if(listaEmpleados(user, pass) == true) {
 			existe=true;
 			System.out.println("El usuario es correcto");
+		}else {
+			System.out.println("El usuario es incorrecto!");
 		}
 		return existe;
 	}
@@ -109,11 +132,11 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 	public boolean comprueboAdmin(String email) {
 		boolean existe=false;
 		Empleado emp= jdbcTemplate.queryForObject("Select * from empleado where email=:email", new MapSqlParameterSource("email",email),new EmpleadoRowMapper());
-		System.out.println("llegue aqui COMPRUEBO ADM");
 		if(emp.getPermiso()==1) {
 			existe=true;
+			System.out.println("Es admin");
 		}
-		System.out.println("Es admin");
+		
 		return existe;
 	}
 

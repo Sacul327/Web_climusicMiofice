@@ -8,7 +8,6 @@
 <%@ page import="java.util.List"%>
 <%@ page import="org.springframework.jdbc.CannotGetJdbcConnectionException" %>
 <%@ page import="org.springframework.dao.DataAccessException" %>
-<%@ page import="org.apache.catalina.core.ApplicationContextFacade" %>    
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

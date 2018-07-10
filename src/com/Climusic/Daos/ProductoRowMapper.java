@@ -3,7 +3,7 @@ package com.Climusic.Daos;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.Climusic.Productos.Productos;
+import com.Climusic.Modelos.Productos;
 
 public class ProductoRowMapper {
 	

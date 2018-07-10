@@ -2,7 +2,7 @@ package com.Climusic.Daos;
 
 import java.util.List;
 
-import com.Climusic.Productos.Productos;
+import com.Climusic.Modelos.Productos;
 
 
 public interface ProductoDao {
