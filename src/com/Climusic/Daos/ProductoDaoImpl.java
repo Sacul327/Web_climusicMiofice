@@ -26,7 +26,7 @@ import com.Climusic.Modelos.Productos;
 
 @Transactional
 @Repository
-@Component("ProductoDao")
+//@Component("ProductoDao")
 public class ProductoDaoImpl implements ProductoDao {
 	
 	
@@ -61,9 +61,13 @@ public class ProductoDaoImpl implements ProductoDao {
 
 	@Override
 	public List<Productos> buscarTodos() {
+			System.out.println("Estoy en buscar todos");
 			List<Productos> prod= null;
-			Query q = (Query) getSession().createQuery("select * from Admin");
+			
+			Query q = (Query) getSession().createQuery("from productos");
+			
 			prod=q.list();
+			prod.forEach(System.out::println);
 			return prod;
 	}
 

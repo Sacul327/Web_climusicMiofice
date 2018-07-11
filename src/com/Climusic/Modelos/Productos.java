@@ -1,11 +1,28 @@
 package com.Climusic.Modelos;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="productos")
 public class Productos {
 	
-	private String marca,modelo,tipo,tipo_detalle,color;
-	private int id_instrumento,stock,proveedor_id;
-	private float precio;
 	
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id_instrumento;
+	private int stock;
+	private int proveedor_id;	
+	private float precio;
+	private String marca;
+	private String modelo;
+	private String tipo;
+	private String tipo_detalle;
+	private String color;
 	
 	
 	

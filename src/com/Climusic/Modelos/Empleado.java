@@ -1,10 +1,30 @@
 package com.Climusic.Modelos;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="empleado")
 public class Empleado {
 	
-	private int id_empleado,permiso;
-	private String nombre,apellido,documento,password,email;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id_empleado;
 	
+	private String nombre;
+	
+	private String apellido;
+	
+	private String documento;
+	
+	private String password;
+	
+	private String email;
+	
+	private int permiso;
 	
 	public int getId_empleado() {
 		return id_empleado;

@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@ page import="org.springframework.context.ApplicationContext"%>
-<%@ page
-	import="org.springframework.context.support.ClassPathXmlApplicationContext"%>
-<%@ page import="com.Climusic.Daos.CarroDao"%>
-<%@ page import="com.Climusic.Modelos.Carro"%>
-<%@ page import="com.Climusic.Daos.ProductoDao"%>
-<%@ page import="com.Climusic.Modelos.Productos"%>
-<%@ page import="java.util.List"%>
-<%@ page
-	import="org.springframework.jdbc.CannotGetJdbcConnectionException"%>
-<%@ page import="org.springframework.dao.DataAccessException"%>
+<%-- <%@ page import="org.springframework.context.ApplicationContext"%> --%>
+<%-- <%@ page --%>
+<%-- 	import="org.springframework.context.support.ClassPathXmlApplicationContext"%> --%>
+<%-- <%@ page import="com.Climusic.Daos.CarroDao"%> --%>
+<%-- <%@ page import="com.Climusic.Modelos.Carro"%> --%>
+<%-- <%@ page import="com.Climusic.Daos.ProductoDao"%> --%>
+<%-- <%@ page import="com.Climusic.Modelos.Productos"%> --%>
+<%-- <%@ page import="java.util.List"%> --%>
+<%-- <%@ page --%>
+<%-- 	import="org.springframework.jdbc.CannotGetJdbcConnectionException"%> --%>
+<%-- <%@ page import="org.springframework.dao.DataAccessException"%> --%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 

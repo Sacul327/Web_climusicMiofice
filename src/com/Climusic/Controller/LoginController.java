@@ -33,6 +33,7 @@ public class LoginController {
 	
 	@RequestMapping("/mostrarProductos")
 	public String mostrarListaprod(Model model){
+		System.out.println("asddddddddddddddddddddddddddddDDDDDDDDDDDDDDDDDDd");
 		List<Productos> productos= pantVentasService.buscarTodosPro();
 		model.addAttribute("productos", productos);
 		System.out.println("SOY LA LISTA MODELO!!!!!!!!"+model+"   SOY LA LISTA MODELO!!!!!!!!");
@@ -51,7 +52,7 @@ public class LoginController {
 		
 		
 		if(empleadoForm.getEmail()!=null) {
-			
+			System.out.println("*************ESTOY AKI***************");
 			if(loginService.checkUser(empleadoForm.getEmail(), empleadoForm.getPassword())){
 				
 				if(loginService.comprueboAdmin(empleadoForm.getEmail())){
