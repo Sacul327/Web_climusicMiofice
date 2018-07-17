@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="org.springframework.context.ApplicationContext" %>
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
 <%@ page import="com.Climusic.Daos.EmpleadoDao"%>
@@ -68,31 +68,14 @@
 							</tr>
 						</thead>
 						<tbody>
-							<%
-							  ApplicationContext app = new ClassPathXmlApplicationContext("Spring.xml");
-							  EmpleadoDao empleadodao = (EmpleadoDao) app.getBean("EmpleadoDao");
-								
-									try {
-										List<Empleado> emp = empleadodao.buscarTodos();
-										for (Empleado emp2 : emp) {
-							%>
+							<c:forEach var = "i"  items="${adm}">
 							<tr>
-								<td><%=emp2.getId_empleado()%></td>
-								<td><%=emp2.getNombre()%></td>
-								<td><%=emp2.getApellido()%></td>
-								<td><%=emp2.getDocumento()%></td>
+								<td><c:out value="${i.getId_empleado()}"/></td>
+								<td><c:out value="${i.getNombre()}"/></td>
+								<td><c:out value="${i.getApellido()}"/></td>
+								<td><c:out value="${i.getDocumento()}"/></td>
 							</tr>
-							<%
-								}
-									} catch (CannotGetJdbcConnectionException ex) {
-										ex.printStackTrace();
-									} catch (DataAccessException e) {
-										e.printStackTrace();
-									}
-								
-								((ClassPathXmlApplicationContext) app).close();
-							%>
-
+							</c:forEach>
 						</tbody>
 					</table>
 				</form>

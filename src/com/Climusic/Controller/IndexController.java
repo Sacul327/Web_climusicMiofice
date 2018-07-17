@@ -42,7 +42,9 @@ public class IndexController {
 		return "location";
 	}
 	@RequestMapping("/usuarios")
-	public String showUsuarios() {
+	public String showUsuarios(Model model) {
+		Empleado empleado = new Empleado();
+		model.addAttribute("empleado", empleado);
 		return "usuarios";
 	}
 	@RequestMapping("/springLog")
