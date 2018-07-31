@@ -56,9 +56,9 @@ public class LoginController {
 			if(loginService.checkUser(empleadoForm.getEmail(), empleadoForm.getPassword())){
 				
 				if(loginService.comprueboAdmin(empleadoForm.getEmail())){
-					return "redirect:/actualizar";
+					return "redirect:/mostrarProductos";
 				}else {
-					return "redirect:/actualizar";
+					return "redirect:/mostrarProductos";
 				}
 				
 			}else {

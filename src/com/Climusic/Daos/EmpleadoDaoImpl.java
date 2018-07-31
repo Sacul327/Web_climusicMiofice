@@ -6,7 +6,6 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,31 +49,23 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 		return jdbcTemplate.update("insert into empleado(nombre,apellido,email,documento,password,permiso) values(:nombre,:apellido,:email,:documento,:password,:permiso)", paramMap) == 1;
 	}
 
-//	@Override
-//	public List<Empleado> buscarTodos() {
-//		return jdbcTemplate.query("Select * from empleado", new RowMapper<Empleado>() {
-//
-//			public Empleado mapRow(ResultSet rs, int rowNum) throws SQLException {
-//				Empleado emp = new Empleado();
-//				emp.setId_empleado(rs.getInt("id_empleado"));
-//				emp.setNombre(rs.getString("nombre"));
-//				emp.setApellido(rs.getString("apellido"));
-//				emp.setDocumento(rs.getString("documento"));
-//				emp.setEmail(rs.getString("email"));
-//				emp.setPassword(rs.getString("password"));
-//				emp.setPermiso(rs.getInt("permiso"));
-//				return emp;
-//			}
-//		});
-//	}
 	@Override
 	public List<Empleado> buscarTodos() {
-		List<Empleado> adm= null;
-		Query q = (Query) getSession().createQuery("select * from empleado");
-		adm=q.list();
-		return adm;
-	}
+		return jdbcTemplate.query("Select * from empleado", new RowMapper<Empleado>() {
 
+			public Empleado mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Empleado emp = new Empleado();
+				emp.setId_empleado(rs.getInt("id_empleado"));
+				emp.setNombre(rs.getString("nombre"));
+				emp.setApellido(rs.getString("apellido"));
+				emp.setDocumento(rs.getString("documento"));
+				emp.setEmail(rs.getString("email"));
+				emp.setPassword(rs.getString("password"));
+				emp.setPermiso(rs.getInt("permiso"));
+				return emp;
+			}
+		});
+	}
 
 	/*@Override
 	public Empleado buscarXId(int id_empleado) {
@@ -148,6 +139,5 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 		
 		return existe;
 	}
-	
-	
+
 }
