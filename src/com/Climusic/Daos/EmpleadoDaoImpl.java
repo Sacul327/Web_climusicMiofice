@@ -113,6 +113,7 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 			existe=true;
 				System.out.println("logre comprobar que el email y usuario estan dentrode la base");
 		}
+		System.out.println(getSession());
 		return existe;
 	}
 
