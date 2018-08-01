@@ -7,9 +7,6 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>src/com/Climusic/Config/persistence-context.xml</config>
-		<config>src/com/Climusic/Config/service-context.xml</config>
-		<config>WebContent/WEB-INF/dispatcher-servlet.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

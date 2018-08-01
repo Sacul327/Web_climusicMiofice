@@ -13,27 +13,22 @@
 	<jee:jndi-lookup jndi-name="jdbc/climusic" id="dataSource"
 		expected-type="javax.sql.DataSource">
 	</jee:jndi-lookup>
-	<context:component-scan base-package="com.Climusic.Daos"></context:component-scan>
-	
 	<context:annotation-config></context:annotation-config>
-	
+	<context:component-scan base-package="com.Climusic.Dao"></context:component-scan>
 	
 	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"
-		lazy-init="false">
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 	<property name="dataSource" ref="dataSource"></property>
 	<property name="packagesToScan" value="com.Climusic.Modelos"></property>
 	<property name="hibernateProperties">
-		
-	
-	
-	<props>
-		<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
-		<prop key="hibernate.show_sql">true</prop>
-		<prop key="hibernate.id.new_generator_mappings">false</prop>
-	</props>
+		<props>
+			<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+			<prop key="hibernate.show_sql">true</prop>
+			<prop key="hibernate.id.new_generator_mappings">false</prop>
+		</props>
 	</property>
 	</bean>
+	
 	<bean id="exceptionTranslator"
 		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor">
 	</bean>
@@ -42,6 +37,6 @@
 		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 	<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	
 	<tx:annotation-driven transaction-manager="transactionManager" />
 </beans>
-

@@ -17,8 +17,8 @@ import com.Climusic.Service.PantVentaService;
 @Controller
 public class LoginController {
 	
-	@Autowired
-	private PantVentaService pantVentasService;
+//	@Autowired
+//	private PantVentaService pantVentasService;
 	@Autowired
 	private LoginService loginService;
 	
@@ -31,16 +31,16 @@ public class LoginController {
 		return "pantalla_ventas_prueba";
 	}
 	
-	@RequestMapping("/mostrarProductos")
-	public String mostrarListaprod(Model model){
-		System.out.println("asddddddddddddddddddddddddddddDDDDDDDDDDDDDDDDDDd");
-		List<Productos> productos= pantVentasService.buscarTodosPro();
-		model.addAttribute("productos", productos);
-		System.out.println("SOY LA LISTA MODELO!!!!!!!!"+model+"   SOY LA LISTA MODELO!!!!!!!!");
-		
-		System.out.println("SOY LISTA PRDUCTOS!!!!!!!!!!!!!"+productos+ "SOY SHOOOOOOOasdasdasd!!!");
-		return "/pantalla_ventas_prueba";
-	}
+//	@RequestMapping("/mostrarProductos")
+//	public String mostrarListaprod(Model model){
+//		System.out.println("asddddddddddddddddddddddddddddDDDDDDDDDDDDDDDDDDd");
+//		List<Productos> productos= pantVentasService.buscarTodosPro();
+//		model.addAttribute("productos", productos);
+//		System.out.println("SOY LA LISTA MODELO!!!!!!!!"+model+"   SOY LA LISTA MODELO!!!!!!!!");
+//		
+//		System.out.println("SOY LISTA PRDUCTOS!!!!!!!!!!!!!"+productos+ "SOY SHOOOOOOOasdasdasd!!!");
+//		return "/pantalla_ventas_prueba";
+//	}
 	
 	@RequestMapping(value="/empleado/ingreso",method=RequestMethod.POST)
 	public String handlAdmin(@ModelAttribute("empleado") Empleado empleadoForm, Model model/*,RedirectAttributes ra
